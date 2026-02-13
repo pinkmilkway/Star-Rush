@@ -13,7 +13,7 @@ REGRAS:
 OBJETIVOS:
 -Concertar o foguete;
 -Escapar do planeta misterioso;
--Eliminar os aliens que irão impedir a nossa saída do planeta.
+-Eliminar os aliens que irão impedir a saída dos astronautas no planeta.
 
 ARTEFATOS:
 -Ferramentas;
@@ -22,13 +22,16 @@ ARTEFATOS:
 
 PERSONAGENS:
 Personagen 1: 
+-Astronauta de cor verde, só anda e não pula.
 
 Personagem 2:
+-Astronauta de cor rosa, só anda e não pula.
 
 Alien Principal:
-2 pernas, 2 braços, 3 dedos, 
+2 pernas, 2 braços, 3 dedos, verde, 2 olhos, se movimenta andando.
 
 Alien Aranha:
-6 pernas, 1 olho, rápido, anda pela parede
+6 pernas, 1 olho, rápido, anda pela parede.
 
 FONTES DE RECEITAS:
+-Roupas de cor diferente, corrida temporária.
