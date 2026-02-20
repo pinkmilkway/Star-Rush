@@ -6,15 +6,15 @@
 Espaço sideral.
 
 ## AMBIENTAÇÃO:
-O jogo se passa em um planeta desconhecido, frio e rochoso, localizado longe do sistema solar. O ambiente é extremamente hostil, com a queda constante de meteoros rochosos que representam uma das principais ameaças. Antes do impacto, um círculo vermelho aparece no chão indicando onde o meteoro irá cair; caso o personagem permaneça dentro dessa área, sofrerá dano. À medida que o meteoro se aproxima, seu som vai ficando cada vez mais alto, aumentando a tensão e exigindo atenção constante do jogador.
+O jogo se passa em um planeta desconhecido, frio e rochoso, localizado longe do sistema solar, onde dois astronautas acabam presos após a queda de sua nave durante uma exploração espacial. O ambiente é extremamente hostil, com a queda constante de meteoros rochosos que representam uma das principais ameaças. Antes do impacto, um círculo vermelho aparece no chão indicando onde o meteoro irá cair; caso um dos personagens permaneça dentro dessa área, sofrerá dano. À medida que o meteoro se aproxima, seu som vai ficando cada vez mais alto, aumentando a tensão e exigindo atenção constante dos jogadores.
 
-Visualmente, o cenário apresenta tons de roxo, rosa, azul, laranja e branco, com iluminação fria e focos de luz pontuais que destacam partes do ambiente. O terreno é irregular, rochoso e coberto por um tipo de muco estelar; ao pisar nessa gosma, o personagem terá sua movimentação reduzida. Os personagens possuem sombras, aumentando a sensação de profundidade, e toda a ação é vista de cima, com um mapa estruturado e cheio de obstáculos que influenciam na movimentação.
+Visualmente, o cenário apresenta tons de roxo, rosa, azul, laranja e branco, com iluminação fria e focos de luz pontuais que destacam partes do ambiente. O terreno é irregular, rochoso e coberto por um tipo de muco estelar; ao pisar nessa gosma, os personagens têm sua movimentação reduzida. Ambos possuem sombras, aumentando a sensação de profundidade, e toda a ação é vista de cima, com um mapa estruturado e cheio de obstáculos que influenciam na movimentação.
 
-O jogo se passa no tempo presente e traz um forte senso de urgência, já que o objetivo é coletar todas as ferramentas necessárias para consertar a nave e assim vencer. Algumas dessas ferramentas estarão com aliens, sendo necessário derrotá-los para obtê-las, enquanto outras poderão ser encontradas dentro de caixas espaciais espalhadas pelo mapa, que também podem, por sorte, conter armas a laser. Os aliens se concentram principalmente ao redor da nave, mas também aparecem distribuídos pelo restante do cenário, aumentando o desafio.
+O jogo se passa no tempo presente e traz um forte senso de urgência, já que os dois jogadores precisam cooperar para coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe. Algumas dessas ferramentas estarão com aliens, sendo necessário derrotá-los para obtê-las, enquanto outras poderão ser encontradas dentro de caixas espaciais espalhadas pelo mapa, que também podem, por sorte, conter armas a laser. Os aliens se concentram principalmente ao redor da nave, mas também aparecem distribuídos pelo restante do cenário, aumentando o desafio.
 
-O personagem possui movimentação limitada, podendo andar apenas para cima, para baixo e para os lados, sem a possibilidade de se mover na diagonal, correr ou pular. Isso torna a movimentação mais estratégica e aumenta a dificuldade ao desviar dos perigos.
+Os personagens possuem movimentação limitada, podendo andar apenas para cima, para baixo e para os lados, sem a possibilidade de se mover na diagonal, correr ou pular. Isso torna a jogabilidade mais estratégica, principalmente em momentos de perigo.
 
-Os efeitos sonoros aumentam a imersão, incluindo um ruído sombrio constante, sons de passos pelo terreno, o barulho das armas a laser durante os combates e o zumbido contínuo do ambiente. As armas a laser possuem disparos extremamente rápidos, impossíveis de desviar, tornando os confrontos mais intensos e perigosos.
+Os efeitos sonoros aumentam a imersão, incluindo um ruído sombrio constante, sons de passos pelo terreno, o barulho das armas a laser durante os combates, o zumbido contínuo do ambiente e uma sirene vinda da nave caída, reforçando a urgência da missão. As armas a laser possuem disparos extremamente rápidos, impossíveis de desviar, tornando os confrontos mais intensos e perigosos.
 
 ## GÊNERO:
 - FICÇÃO CIENTÍFICA.
@@ -24,11 +24,14 @@ O jogo é baseado em movimentação estratégica, exploração e sobrevivência 
 
 O objetivo principal é coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe. Essas ferramentas podem ser encontradas dentro de caixas espaciais espalhadas pelo cenário ou com aliens, sendo necessário derrotá-los para obter os itens. Alguns inimigos ficam concentrados ao redor da nave, enquanto outros estão distribuídos pelo mapa.
 
-Durante a partida, o jogador precisa lidar com ameaças constantes, como meteoros rochosos que caem continuamente em áreas sinalizadas por círculos vermelhos, causando dano caso não sejam evitados. Além disso, o ambiente influencia diretamente na jogabilidade, já que ao pisar na gosma estelar o personagem tem sua velocidade reduzida.
+Durante a partida, os jogadores precisam lidar com ameaças constantes, como meteoros rochosos que caem continuamente em áreas sinalizadas por círculos vermelhos, causando dano caso não sejam evitados. Além disso, o ambiente influencia diretamente na jogabilidade, já que ao pisar na gosma estelar o personagem tem sua velocidade reduzida.
 
-Para se defender, o jogador pode encontrar armas a laser dentro das caixas, que possuem disparos rápidos e impossíveis de desviar. Dessa forma, o jogo combina coleta de itens, combate, desvio de perigos e gerenciamento de tempo, exigindo estratégia e atenção constante para alcançar a vitória.
+Para se defender, os jogadores podem encontrar armas a laser dentro das caixas, que possuem disparos rápidos e impossíveis de desviar. Dessa forma, o jogo combina coleta de itens, combate, desvio de perigos e gerenciamento de tempo, exigindo estratégia e atenção constante para alcançar a vitória.
 
 ## PLATAFORMAS-ALVOS:
+O jogo será desenvolvido para dispositivos móveis, com foco em smartphones Android e iOS. A jogabilidade será adaptada para controles de toque na tela, permitindo que o jogador se mova de forma simples para cima, baixo e lados, de acordo com as mecânicas propostas.
+
+A escolha do celular como plataforma principal favorece a acessibilidade, já que o jogo possui visão de cima, controles simples e dinâmica direta, facilitando a adaptação para telas sensíveis ao toque. Dessa forma, o jogador poderá ter uma experiência fluida e prática, adequada para partidas rápidas e envolventes em qualquer lugar.
 
 ## MODELO DE MONETIZAÇÃO (RESUMO/DOCUMENTO):
 - TIPO DE MONETIZAÇÃO (PREMIUM, ALFA/BETA/FINAL PAGO, BASEADO EM ANÚNCIOS, MICROTRANSAÇÕES, ASSINATURAS, ETC.);
@@ -48,10 +51,12 @@ Para se defender, o jogador pode encontrar armas a laser dentro das caixas, que 
 - INFLUÊNCIA 4: MEIO DE COMUNICAÇÃO (TELEVISÃO,JOGOS, LITERATURA, FILMES ETC.) / EXPLIQUE POR QUE ISSO É UMA INFLUÊNCIA EM 1 PARÁGRAFO OU MENOS;
 
 ## APRESENTAÇÃO CONCISA/RELÂMPAGO:
-(UMA APRESENTAÇÃO DE UMA FRASE PARA O SEU JOGO). IMAGINE QUE VOCÊ ESTÁ APRESENTANDO O SEU JOGO PARA UM EXECUTIVO QUE ESTÁ INDO PARA O ELEVADOR. VOCÊ TEM MENOS DE 60 SEGUNDOS.
+Preso em um planeta hostil, você precisa correr contra o tempo para coletar ferramentas, consertar sua nave e sobreviver a meteoros e aliens mortais que não vão facilitar sua fuga.
 
 ## DESCRIÇÃO DO PROJETO (RESUMO):
-(PELO MENOS 2 PARÁGRAFOS E NO MÁXIMO 3).
+O jogo é um survival estratégico em visão superior, desenvolvido para dois jogadores, que acompanham dois astronautas que, durante uma exploração espacial, tiveram sua nave danificada e acabaram caindo em um planeta alienígena frio, rochoso e extremamente hostil. Presos nesse ambiente desconhecido, eles precisam lidar com ameaças constantes, como meteoros rochosos que caem continuamente e aliens não amigáveis. Os impactos dos meteoros são indicados por áreas de perigo no chão, exigindo atenção e reflexos rápidos, enquanto o cenário apresenta obstáculos e elementos como a gosma estelar, que reduz a velocidade dos personagens.
+
+O principal objetivo é que os dois astronautas cooperem para coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe, garantindo a fuga do planeta. Essas ferramentas estão espalhadas pelo mapa, podendo ser encontradas dentro de caixas ou com inimigos, sendo necessário derrotá-los para obtê-las. Ambos os personagens possuem movimentação limitada (sem correr, pular ou andar na diagonal) o que torna a jogabilidade mais estratégica. Além disso, é possível encontrar armas a laser com disparos rápidos para se defender, tornando a experiência dinâmica, desafiadora e focada no trabalho em equipe para sobreviver.
 
 ## DESCRIÇÃO DETALHADA DO PROJETO:
 
