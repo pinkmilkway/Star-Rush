@@ -15,10 +15,18 @@ O jogo se passa no tempo presente e traz um forte senso de urgência, já que o 
 O personagem possui movimentação limitada, podendo andar apenas para cima, para baixo e para os lados, sem a possibilidade de se mover na diagonal, correr ou pular. Isso torna a movimentação mais estratégica e aumenta a dificuldade ao desviar dos perigos.
 
 Os efeitos sonoros aumentam a imersão, incluindo um ruído sombrio constante, sons de passos pelo terreno, o barulho das armas a laser durante os combates e o zumbido contínuo do ambiente. As armas a laser possuem disparos extremamente rápidos, impossíveis de desviar, tornando os confrontos mais intensos e perigosos.
+
 ## GÊNERO:
 - FICÇÃO CIENTÍFICA.
   
 ## MECÂNICAS PRINCIPAIS DO JOGO (RESUMO):
+O jogo é baseado em movimentação estratégica, exploração e sobrevivência sob pressão de tempo. O personagem se move apenas para cima, para baixo e para os lados, não podendo correr, pular ou se mover na diagonal, o que exige mais planejamento durante a navegação pelo mapa.
+
+O objetivo principal é coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe. Essas ferramentas podem ser encontradas dentro de caixas espaciais espalhadas pelo cenário ou com aliens, sendo necessário derrotá-los para obter os itens. Alguns inimigos ficam concentrados ao redor da nave, enquanto outros estão distribuídos pelo mapa.
+
+Durante a partida, o jogador precisa lidar com ameaças constantes, como meteoros rochosos que caem continuamente em áreas sinalizadas por círculos vermelhos, causando dano caso não sejam evitados. Além disso, o ambiente influencia diretamente na jogabilidade, já que ao pisar na gosma estelar o personagem tem sua velocidade reduzida.
+
+Para se defender, o jogador pode encontrar armas a laser dentro das caixas, que possuem disparos rápidos e impossíveis de desviar. Dessa forma, o jogo combina coleta de itens, combate, desvio de perigos e gerenciamento de tempo, exigindo estratégia e atenção constante para alcançar a vitória.
 
 ## PLATAFORMAS-ALVOS:
 
