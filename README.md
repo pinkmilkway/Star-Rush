@@ -34,3 +34,5 @@ FONTES DE RECEITAS:
 - Vender itens para facilitar a jogada, como corrida para os astronautas, armas a laser mais potentes, skins para os personagens (astronautas e aliens) e cenários novos.
 - O jogo será lançado no App Store.
 - Faremos a divulgação em apps como Instagram, Facebook e Tiktok.
+
+-Objetivo: R$120.000 por ano.
