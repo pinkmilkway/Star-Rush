@@ -10,7 +10,7 @@ O jogo se passa em um planeta desconhecido, frio e rochoso, localizado longe do 
 
 Visualmente, o cenário apresenta tons de roxo, rosa, azul, laranja e branco, com iluminação fria e focos de luz pontuais que destacam partes do ambiente. O terreno é irregular, rochoso e coberto por um tipo de muco estelar; ao pisar nessa gosma, os personagens têm sua movimentação reduzida. Ambos possuem sombras, aumentando a sensação de profundidade, e toda a ação é vista de cima, com um mapa estruturado e cheio de obstáculos que influenciam na movimentação.
 
-O jogo se passa no tempo presente e traz um forte senso de urgência, já que os dois jogadores precisam cooperar para coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe. Algumas dessas ferramentas estarão com aliens, sendo necessário derrotá-los para obtê-las, enquanto outras poderão ser encontradas dentro de caixas espaciais espalhadas pelo mapa, que também podem, por sorte, conter armas a laser. Os aliens se concentram principalmente ao redor da nave, mas também aparecem distribuídos pelo restante do cenário, aumentando o desafio.
+O jogo se passa no tempo presente e traz um forte senso de urgência, já que os dois jogadores precisam cooperar para coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe. Algumas dessas ferramentas estarão com aliens, sendo necessário derrotá-los para obtê-las, enquanto outras poderão ser encontradas dentro de caixas espaciais espalhadas pelo mapa, que também podem, por sorte, conter armas a laser. Esses aliens são criaturas verdes, magras, com dois olhos puxados, duas pernas e três dedos em cada membro, além de possuírem a mesma movimentação dos astronautas, o que torna os confrontos mais equilibrados e estratégicos. Os aliens se concentram principalmente ao redor da nave, mas também aparecem distribuídos pelo restante do cenário, aumentando o desafio.
 
 Os personagens possuem movimentação limitada, podendo andar apenas para cima, para baixo e para os lados, sem a possibilidade de se mover na diagonal, correr ou pular. Isso torna a jogabilidade mais estratégica, principalmente em momentos de perigo.
 
@@ -81,7 +81,7 @@ Custo: R$ 3.500/mês (parcial)
   
 ## INFLUÊNCIAS (RESUMO):
 - BOMB IT (JOGO): INSPIRAÇÃO PARA O MAPA DO JOGO, COM OBSTÁCULOS E OBJETOS CAINDO DO CÉU.
-- INFLUÊNCIA 2: MEIO DE COMUNICAÇÃO (TELEVISÃO,JOGOS, LITERATURA, FILMES ETC.) / EXPLIQUE POR QUE ISSO É UMA INFLUÊNCIA EM 1 PARÁGRAFO OU MENOS;
+- TOY STORY (FILME): USAMOS OS ALIENS DE TOY STORY COMO INSPIRAÇÃO PARA OS NOSSOS ALIENÍGENAS.
 - INFLUÊNCIA 3: MEIO DE COMUNICAÇÃO (TELEVISÃO,JOGOS, LITERATURA, FILMES ETC.) / EXPLIQUE POR QUE ISSO É UMA INFLUÊNCIA EM 1 PARÁGRAFO OU MENOS;
 - INFLUÊNCIA 4: MEIO DE COMUNICAÇÃO (TELEVISÃO,JOGOS, LITERATURA, FILMES ETC.) / EXPLIQUE POR QUE ISSO É UMA INFLUÊNCIA EM 1 PARÁGRAFO OU MENOS;
 
