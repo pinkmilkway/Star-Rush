@@ -31,4 +31,6 @@ Alien Principal:
 2 pernas, 2 braços, 3 dedos, verde, 2 olhos, se movimenta andando.
 
 FONTES DE RECEITAS:
-- Tijolinhos.
+- Vender itens para facilitar a jogada, como corrida para os astronautas, armas a laser mais potentes, skins para os personagens (astronautas e aliens) e cenários novos.
+- O jogo será lançado no App Store.
+- Faremos a divulgação em apps como Instagram, Facebook e Tiktok.
