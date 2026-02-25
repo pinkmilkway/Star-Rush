@@ -3,7 +3,10 @@
  Para isso, os jogadores precisam explorar o planeta, coletar os itens necessários espalhados pelo cenário e enfrentar os inimigos até concluir o concerto da nave.
 
 REFERÊNCIA: 
-Bomb it.
+Bomb it;
+Pacman;
+Toystore;
+
 
 REGRAS:
 -Matar os aliens sem que eles te toquem;
