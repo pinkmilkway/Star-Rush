@@ -6,7 +6,7 @@
 Espaço sideral.
 
 ## AMBIENTAÇÃO:
-O jogo se passa em um planeta desconhecido, frio e rochoso, localizado longe do sistema solar, onde dois astronautas acabam presos após a queda de sua nave durante uma exploração espacial. O ambiente é extremamente hostil, com a queda constante de meteoros rochosos que representam uma das principais ameaças. Antes do impacto, um círculo vermelho aparece no chão indicando onde o meteoro irá cair; caso um dos personagens permaneça dentro dessa área, sofrerá dano. À medida que o meteoro se aproxima, seu som vai ficando cada vez mais alto, aumentando a tensão e exigindo atenção constante dos jogadores.
+O jogo se passa em um planeta desconhecido, frio e rochoso, localizado longe do sistema solar, onde dois astronautas acabam presos após a queda de sua nave durante uma exploração espacial. O ambiente é extremamente hostil, com a queda constante de meteoros rochosos a cada 2 minutos, que representam uma das principais ameaças. Antes do impacto, um círculo vermelho aparece no chão indicando onde o meteoro irá cair; caso um dos personagens permaneça dentro dessa área, sofrerá dano. À medida que o meteoro se aproxima, seu som vai ficando cada vez mais alto, aumentando a tensão e exigindo atenção constante dos jogadores.
 
 Visualmente, o cenário apresenta tons de roxo, rosa, azul, laranja e branco, com iluminação fria e focos de luz pontuais que destacam partes do ambiente. O terreno é irregular, rochoso e coberto por um tipo de muco estelar; ao pisar nessa gosma, os personagens têm sua movimentação reduzida e seus sentidos invertidos, voltando somente quando o oxigênio é coletado. Ambos possuem sombras, aumentando a sensação de profundidade, e toda a ação é vista de cima, com um mapa estruturado e cheio de obstáculos que influenciam na movimentação.
 
@@ -24,7 +24,7 @@ O jogo é baseado em movimentação estratégica, exploração e sobrevivência 
 
 O objetivo principal é coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe. Essas ferramentas podem ser encontradas pelo cenário ou com aliens, sendo necessário derrotá-los para obter os itens. Alguns inimigos ficam estão distribuídos pelo mapa, enquantos outros, protegem itens.
 
-Durante a partida, os jogadores precisam lidar com ameaças constantes, como meteoros rochosos que caem continuamente em áreas sinalizadas por círculos vermelhos, causando dano caso não sejam evitados. Além disso, o ambiente influencia diretamente na jogabilidade, já que ao pisar na gosma estelar o personagem tem sua velocidade reduzida e seu sentido alterado.
+Durante a partida, os jogadores precisam lidar com ameaças constantes, como meteoros rochosos que caem a cada 2 minutos em áreas sinalizadas por círculos vermelhos, causando dano caso não sejam evitados. Além disso, o ambiente influencia diretamente na jogabilidade, já que ao pisar na gosma estelar o personagem tem sua velocidade reduzida e seu sentido alterado.
 
 Para se defender, os jogadores podem encontrar armas a laser, que possuem disparos rápidos e impossíveis de desviar. Dessa forma, o jogo combina coleta de itens, combate, desvio de perigos e gerenciamento de tempo, exigindo estratégia e atenção constante para alcançar a vitória.
 
@@ -89,12 +89,12 @@ Custo: R$ 3.500/mês (parcial)
 Preso em um planeta hostil, você precisa correr contra o tempo para coletar ferramentas, consertar sua nave e sobreviver a meteoros e aliens mortais que não vão facilitar sua fuga.
 
 ## DESCRIÇÃO DO PROJETO (RESUMO):
-O jogo é um survival estratégico em visão superior, desenvolvido para dois jogadores, que acompanham dois astronautas que, durante uma exploração espacial, tiveram sua nave danificada e acabaram caindo em um planeta alienígena frio, rochoso e extremamente hostil. Presos nesse ambiente desconhecido, eles precisam lidar com ameaças constantes, como meteoros rochosos que caem continuamente e aliens não amigáveis. Os impactos dos meteoros são indicados por áreas de perigo no chão, exigindo atenção e reflexos rápidos, enquanto o cenário apresenta obstáculos e elementos como a gosma estelar, que reduz a velocidade dos personagens.
+O jogo é um survival estratégico em visão superior, desenvolvido para dois jogadores, que acompanham dois astronautas que, durante uma exploração espacial, tiveram sua nave danificada e acabaram caindo em um planeta alienígena frio, rochoso e extremamente hostil. Presos nesse ambiente desconhecido, eles precisam lidar com ameaças constantes, como meteoros rochosos que caem a cada 2 minutos e aliens não amigáveis. Os impactos dos meteoros são indicados por áreas de perigo no chão, exigindo atenção e reflexos rápidos, enquanto o cenário apresenta obstáculos e elementos como a gosma estelar, que reduz a velocidade dos personagens.
 
 O principal objetivo é que os dois astronautas cooperem para coletar todas as ferramentas necessárias e consertar a nave antes que o tempo acabe, garantindo a fuga do planeta. Essas ferramentas estão espalhadas pelo mapa, podendo também, serem encontradas com inimigos, sendo necessário derrotá-los para obtê-las. Ambos os personagens possuem movimentação limitada (sem correr, pular ou andar na diagonal) o que torna a jogabilidade mais estratégica. Além disso, é possível encontrar armas a laser com disparos rápidos para se defender, tornando a experiência dinâmica, desafiadora e focada no trabalho em equipe para sobreviver.
 
 ## DESCRIÇÃO DETALHADA DO PROJETO:
-O jogo é um survival cooperativo em visão superior, desenvolvido para dispositivos móveis, no qual dois jogadores controlam astronautas que ficaram presos em um planeta desconhecido após a queda de sua nave durante uma missão de exploração espacial. O planeta é frio, rochoso e extremamente hostil, criando um cenário de constante perigo. Meteoros rochosos caem com frequência pelo mapa, sendo sinalizados por círculos vermelhos no chão que indicam o local de impacto; caso os personagens permaneçam nessas áreas, sofrerão dano. À medida que o meteoro se aproxima, o som aumenta gradativamente, intensificando a tensão e exigindo atenção contínua.
+O jogo é um survival cooperativo em visão superior, desenvolvido para dispositivos móveis, no qual dois jogadores controlam astronautas que ficaram presos em um planeta desconhecido após a queda de sua nave durante uma missão de exploração espacial. O planeta é frio, rochoso e extremamente hostil, criando um cenário de constante perigo. Meteoros rochosos caem a cada 2 minutos pelo mapa, sendo sinalizados por círculos vermelhos no chão que indicam o local de impacto; caso os personagens permaneçam nessas áreas, sofrerão dano. À medida que o meteoro se aproxima, o som aumenta gradativamente, intensificando a tensão e exigindo atenção contínua.
 
 O ambiente apresenta uma estética alienígena marcante, com tons de roxo, rosa, azul, laranja e branco, combinados com iluminação fria e focos de luz pontuais. O terreno é irregular e coberto por uma substância semelhante a um muco estelar, que reduz a velocidade dos personagens ao ser pisado e inverte seus sentidos. Os personagens possuem sombras, reforçando a profundidade do cenário, e toda a jogabilidade ocorre em uma visão em 45*, com mapa estruturado, obstáculos estratégicos e áreas que influenciam diretamente na movimentação.
 
@@ -119,7 +119,7 @@ Os personagens só podem se mover para cima, baixo e lados, sem correr, pular ou
 Essa limitação faz com que os jogadores precisem planejar cada movimento, principalmente ao fugir de meteoros ou inimigos. O posicionamento se torna essencial, tornando a jogabilidade mais tensa e estratégica.
 
 - Sistema de Meteoros e Perigo Dinâmico:
-Meteoros rochosos caem constantemente no mapa, sendo sinalizados por círculos vermelhos no chão. Caso o jogador permaneça na área, sofrerá dano. O som do meteoro aumenta conforme ele se aproxima, servindo como alerta adicional.
+Meteoros rochosos caem a cada 2 minutos pelo mapa, sendo sinalizados por círculos vermelhos no chão. Caso o jogador permaneça na área, sofrerá dano. O som do meteoro aumenta conforme ele se aproxima, servindo como alerta adicional.
 Essa mecânica funciona como uma ameaça contínua que impede os jogadores de ficarem parados. Eles precisam estar sempre atentos ao ambiente, combinando movimentação e timing para evitar danos.
 
 - Coleta de Recursos e Objetivo com Tempo:
