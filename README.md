@@ -3,9 +3,10 @@
  Para isso, os jogadores precisam explorar o planeta, coletar os itens necessários espalhados pelo cenário e enfrentar os inimigos até concluir o concerto da nave.
 
 REFERÊNCIA: 
-Bomb it;
-Pacman;
-Toystore;
+- Bomb it;
+- Pacman;
+- Toystore;
+- Among Us.
 
 
 REGRAS:
@@ -15,23 +16,25 @@ REGRAS:
 
 OBJETIVOS:
 -Concertar o foguete;
--Escapar do planeta misterioso;
 -Eliminar os aliens que irão impedir a saída dos astronautas no planeta.
+-Escapar do planeta misterioso;
 
 ARTEFATOS:
 -Ferramentas;
 -Arma a laser;
 -Foguete espacial;
+-Tanque de oxigênio.
 
 PERSONAGENS:
 Personagen 1: 
--Astronauta, só anda e não pula.
+-Astronauta, só anda para frente, para trás e para os lados, e não pula.
 
 Personagem 2:
--Astronauta, só anda e não pula.
+-Astronauta, só anda para frente, para trás e para os lados, e não pula.
 
 Alien Principal:
-2 pernas, 2 braços, 3 dedos, verde, 2 olhos, se movimenta andando.
+2 pernas, 2 braços, 3 dedos, verde, 2 olhos, só anda para frente, para trás e para os lados, e não pula.
+
 
 FONTES DE RECEITAS:
 - Vender itens para facilitar a jogada, como corrida para os astronautas, armas a laser mais potentes, skins para os personagens (astronautas e aliens) e cenários novos.
