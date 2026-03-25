@@ -1,4 +1,4 @@
-class scene0 extends Phaser.Scene {
+2class scene0 extends Phaser.Scene {
   constructor() {
     super("scene0");
 
