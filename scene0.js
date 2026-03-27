@@ -1,4 +1,4 @@
-2class scene0 extends Phaser.Scene {
+class scene0 extends Phaser.Scene {
   constructor() {
     super("scene0");
 
@@ -22,11 +22,11 @@
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet("sample", "sample.png", {
+    this.load.spritesheet("water", "water_detilazation_v2.png", {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.image("spaceship", "rocket-spaceship.png");
+    this.load.image("spaceship", "foguete4.png");
     this.load.spritesheet("fundo", "fundo.png", {
       frameWidth: 32,
       frameHeight: 32,
@@ -35,15 +35,7 @@
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet("terrain", "terrain.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
     this.load.spritesheet("withfloor", "withfloor.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-    this.load.spritesheet("floor", "PurpleDungeonTilesNoFloor.png", {
       frameWidth: 32,
       frameHeight: 32,
     });
@@ -65,79 +57,59 @@
       "decorative",
       "decorative",
     );
-    this.tilesetTerrain = this.tilemap.addTilesetImage("terrain", "terrain");
     this.tilesetWithFloor = this.tilemap.addTilesetImage(
       "withfloor",
       "withfloor",
     );
-    this.tilesetFloor = this.tilemap.addTilesetImage("floor", "floor");
+    this.tilesetObjects = this.tilemap.addTilesetImage("objects", "objects");
+    this.tilesetFoguete = this.tilemap.addTilesetImage("foguete4", "spaceship");
+    this.tilesetWater = this.tilemap.addTilesetImage(
+      "water_detilazation_v2",
+      "water",
+    );
 
-    this.layerFundo = this.tilemap.createLayer("FUNDO", [
-      this.tilesetFundo,
-      this.tilesetDecorative,
-      this.tilesetTerrain,
-      this.tilesetWithFloor,
-      this.tilesetFloor,
-    ]);
+    this.layerFundo = this.tilemap.createLayer("FUNDO", [this.tilesetFundo]);
 
     this.layerParede = this.tilemap.createLayer("PAREDE", [
-      this.tilesetFundo,
-      this.tilesetDecorative,
-      this.tilesetTerrain,
       this.tilesetWithFloor,
-      this.tilesetFloor,
     ]);
     this.layerParede.setCollisionByProperty({ collides: true });
 
+    this.player = this.physics.add.sprite(
+      2368.824134256581,
+      2453.533691321998,
+      "personagem",
+      0,
+    );
+
     this.layerFoguete = this.tilemap.createLayer("FOGUETE", [
-      this.tilesetFundo,
-      this.tilesetDecorative,
-      this.tilesetTerrain,
-      this.tilesetWithFloor,
-      this.tilesetFloor,
+      this.tilesetFoguete,
     ]);
+    this.layerFoguete.setCollisionByProperty({ foguete: true });
 
     this.layerPlanta2 = this.tilemap.createLayer("PLANTA 2", [
-      this.tilesetFundo,
       this.tilesetDecorative,
-      this.tilesetTerrain,
-      this.tilesetWithFloor,
-      this.tilesetFloor,
     ]);
 
     this.layerPlanta3 = this.tilemap.createLayer("PLANTA 3", [
-      this.tilesetFundo,
       this.tilesetDecorative,
-      this.tilesetTerrain,
-      this.tilesetWithFloor,
-      this.tilesetFloor,
     ]);
 
     this.layerMinerio1 = this.tilemap.createLayer("MINERIO 1", [
-      this.tilesetFundo,
       this.tilesetDecorative,
-      this.tilesetTerrain,
-      this.tilesetWithFloor,
-      this.tilesetFloor,
     ]);
+    this.layerMinerio1.setCollisionByProperty({ pedra: true });
 
     this.layerMatocomolhos = this.tilemap.createLayer("MATO COM OLHOS", [
-      this.tilesetFundo,
-      this.tilesetDecorative,
-      this.tilesetTerrain,
-      this.tilesetWithFloor,
-      this.tilesetFloor,
+      this.tilesetObjects,
     ]);
 
     this.layerPlanta1 = this.tilemap.createLayer("PLANTA 1", [
-      this.tilesetFundo,
       this.tilesetDecorative,
-      this.tilesetTerrain,
-      this.tilesetWithFloor,
-      this.tilesetFloor,
     ]);
+    this.layerPlanta1.setCollisionByProperty({ pedra: true });
 
-    this.player = this.physics.add.sprite(150, 600, "personagem", 0);
+    this.layerGosma = this.tilemap.createLayer("GOSMA", [this.tilesetWater]);
 
     this.anims.create({
       key: "standing-still",
@@ -169,7 +141,6 @@
       repeat: -1,
     });
 
-    /*
     this.physics.world.setBounds(
       0,
       0,
@@ -182,10 +153,14 @@
       this.tilemap.widthInPixels,
       this.tilemap.heightInPixels,
     );
-    */
     this.cameras.main.startFollow(this.player);
 
     this.player.setCollideWorldBounds(true);
+
+    this.physics.add.collider(this.player, this.layerParede);
+    this.physics.add.collider(this.player, this.layerFoguete);
+    this.physics.add.collider(this.player, this.layerMinerio1);
+    this.physics.add.collider(this.player, this.layerPlanta1);
 
     this.music = this.sound.add("music", { loop: true }).play();
     this.laser = this.sound.add("laser");
@@ -215,7 +190,7 @@
           this.direction.y * this.speed,
         );
       } else {
-        this.player.setVelocityX(0);
+        this.player.setVelocity(0, 0);
       }
     });
   }
