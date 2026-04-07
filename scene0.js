@@ -76,8 +76,8 @@ class scene0 extends Phaser.Scene {
     this.layerParede.setCollisionByProperty({ collides: true });
 
     this.player = this.physics.add.sprite(
-      2368.824134256581,
-      2453.533691321998,
+      2489.018404687718,
+      2432,
       "personagem",
       0,
     );
