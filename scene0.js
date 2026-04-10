@@ -41,6 +41,7 @@ class scene0 extends Phaser.Scene {
     });
     this.load.audio("music", "music.mp3");
     this.load.audio("laser", "laser.mp3");
+    this.load.audio("passos", "passos.mp3");
 
     this.load.plugin(
       "rexvirtualjoystickplugin",
@@ -78,7 +79,7 @@ class scene0 extends Phaser.Scene {
     this.player = this.physics.add.sprite(
       2489.018404687718,
       2432,
-      "personagem",
+      "andandobaixo",
       0,
     );
 
@@ -170,6 +171,7 @@ class scene0 extends Phaser.Scene {
 
     this.music = this.sound.add("music", { loop: true }).play();
     this.laser = this.sound.add("laser");
+    
 
     this.joystick = this.plugins.get("rexvirtualjoystickplugin").add(this, {
       x: 100,
@@ -195,6 +197,7 @@ class scene0 extends Phaser.Scene {
           this.direction.x * this.speed,
           this.direction.y * this.speed,
         );
+        this.passos.play({ loop: true });
       } else {
         this.player.setVelocity(0, 0);
       }
@@ -208,6 +211,7 @@ class scene0 extends Phaser.Scene {
       this.player.body.blocked.down
     ) {
       this.player.anims.play("standing-still", true);
+      this.passos.stop();
     }
   }
 }
