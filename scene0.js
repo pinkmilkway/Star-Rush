@@ -157,7 +157,7 @@ class scene0 extends Phaser.Scene {
     this.layerIluminacao = this.tilemap.createLayer("ILUMINACAO", [
       this.tilesetWithFloor,
     ]);
-    this.layerIluminacao.setCollisionByProperty({ collide: true });
+    this.layerIluminacao.setCollisionByProperty({ collides: true });
 
     this.layerMatocomolhos = this.tilemap.createLayer("MATO COM OLHOS", [
       this.tilesetObjects,
