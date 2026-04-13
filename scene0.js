@@ -132,6 +132,19 @@ class scene0 extends Phaser.Scene {
     ]);
     this.layerParede.setCollisionByProperty({ collides: true });
 
+    this.layerPlanta1 = this.tilemap.createLayer("PLANTA 1", [
+      this.tilesetDecorative,
+    ]);
+    this.layerPlanta1.setCollisionByProperty({ pedra: true });
+
+    this.layerPlanta2 = this.tilemap.createLayer("PLANTA 2", [
+      this.tilesetDecorative,
+    ]);
+
+     this.layerPlanta3 = this.tilemap.createLayer("PLANTA 3", [
+       this.tilesetDecorative,
+     ]);
+
     this.player = this.physics.add.sprite(
       2489.018404687718,
       2432,
@@ -139,21 +152,11 @@ class scene0 extends Phaser.Scene {
       0,
     );
 
-    this.layerFoguete = this.tilemap.createLayer("FOGUETE", [
-      this.tilesetFoguete,
-    ]);
+     this.layerFoguete = this.tilemap.createLayer("FOGUETE", [
+       this.tilesetFoguete,
+     ]);
     this.layerFoguete.setCollisionByProperty({ foguete: true });
-
-    this.layerPlanta2 = this.tilemap.createLayer("PLANTA 2", [
-      this.tilesetDecorative,
-    ]);
-    this.layerPlanta2.setCollisionByProperty({ planta: true });
-
-    this.layerPlanta3 = this.tilemap.createLayer("PLANTA 3", [
-      this.tilesetDecorative,
-    ]);
-    this.layerPlanta3.setCollisionByProperty({ planta: true });
-
+    
     this.layerIluminacao = this.tilemap.createLayer("ILUMINACAO", [
       this.tilesetWithFloor,
     ]);
@@ -163,11 +166,6 @@ class scene0 extends Phaser.Scene {
       this.tilesetObjects,
     ]);
     this.layerMatocomolhos.setCollisionByProperty({ planta: true });
-
-    this.layerPlanta1 = this.tilemap.createLayer("PLANTA 1", [
-      this.tilesetDecorative,
-    ]);
-    this.layerPlanta1.setCollisionByProperty({ pedra: true });
 
     this.layerGosma = this.tilemap.createLayer("GOSMA", [this.tilesetWater]);
 

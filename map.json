@@ -467,12 +467,21 @@
                         }]
                 }, 
                 {
+                 "id":274,
+                 "properties":[
+                        {
+                         "name":"pedra",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
                  "id":315,
                  "properties":[
                         {
                          "name":"planta",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -481,7 +490,7 @@
                         {
                          "name":"planta",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -490,7 +499,7 @@
                         {
                          "name":"planta",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }],
          "tilewidth":32
@@ -1026,78 +1035,6 @@
                         }]
                 }, 
                 {
-                 "id":55,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":56,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":57,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":58,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":59,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":60,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":61,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":62,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":63,
                  "properties":[
                         {
@@ -1126,24 +1063,6 @@
                 }, 
                 {
                  "id":66,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":67,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":68,
                  "properties":[
                         {
                          "name":"foguete",
@@ -1323,78 +1242,6 @@
                         }]
                 }, 
                 {
-                 "id":92,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":93,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":94,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":95,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":96,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":97,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":98,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":99,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":100,
                  "properties":[
                         {
@@ -1432,42 +1279,6 @@
                 }, 
                 {
                  "id":104,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":105,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":106,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":107,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":108,
                  "properties":[
                         {
                          "name":"foguete",
@@ -1530,78 +1341,6 @@
                         }]
                 }, 
                 {
-                 "id":119,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":120,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":121,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":122,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":123,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":124,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":125,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":126,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":127,
                  "properties":[
                         {
@@ -1612,78 +1351,6 @@
                 }, 
                 {
                  "id":128,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":129,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":130,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":131,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":132,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":133,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":134,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":135,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":136,
                  "properties":[
                         {
                          "name":"foguete",
@@ -1729,42 +1396,6 @@
                 }, 
                 {
                  "id":141,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":142,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":143,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":144,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":145,
                  "properties":[
                         {
                          "name":"foguete",
@@ -1827,78 +1458,6 @@
                         }]
                 }, 
                 {
-                 "id":156,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":157,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":158,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":159,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":160,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":161,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":162,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":163,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":164,
                  "properties":[
                         {
@@ -1914,69 +1473,6 @@
                          "name":"foguete",
                          "type":"bool",
                          "value":false
-                        }]
-                }, 
-                {
-                 "id":166,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":167,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":168,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":169,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":170,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":171,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":172,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
                         }]
                 }, 
                 {
@@ -2061,24 +1557,6 @@
                         }]
                 }, 
                 {
-                 "id":182,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":183,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":188,
                  "properties":[
                         {
@@ -2123,124 +1601,6 @@
                          "value":false
                         }]
                 }, 
-                {
-                 "id":193,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":194,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":195,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":196,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":197,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":198,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":199,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":200,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":201,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":202,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":203,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":204,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":205,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                },
-            
                 {
                  "id":206,
                  "properties":[
@@ -2359,79 +1719,7 @@
                         }]
                 }, 
                 {
-                 "id":219,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":220,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":225,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":226,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":227,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":228,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":229,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":230,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":231,
                  "properties":[
                         {
                          "name":"foguete",
@@ -2441,33 +1729,6 @@
                 }, 
                 {
                  "id":232,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":233,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":234,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":235,
                  "properties":[
                         {
                          "name":"foguete",
@@ -2656,75 +1917,12 @@
                         }]
                 }, 
                 {
-                 "id":256,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":257,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":262,
                  "properties":[
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":263,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":264,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
                          "value":false
-                        }]
-                }, 
-                {
-                 "id":265,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":266,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":267,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
                         }]
                 }, 
                 {
@@ -2944,87 +2142,6 @@
                         }]
                 }, 
                 {
-                 "id":292,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":293,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":294,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":299,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":300,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":301,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":302,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":303,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":304,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
                  "id":305,
                  "properties":[
                         {
@@ -3131,7 +2248,8 @@
                          "type":"bool",
                          "value":true
                         }]
-                }, 
+                },
+            
                 {
                  "id":317,
                  "properties":[
@@ -3241,61 +2359,7 @@
                         }]
                 }, 
                 {
-                 "id":329,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":330,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":331,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":336,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
                  "id":337,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":338,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":339,
                  "properties":[
                         {
                          "name":"foguete",
@@ -3556,33 +2620,6 @@
                         }]
                 }, 
                 {
-                 "id":368,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":373,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":374,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
                  "id":375,
                  "properties":[
                         {
@@ -3590,8 +2627,7 @@
                          "type":"bool",
                          "value":true
                         }]
-                },
-            
+                }, 
                 {
                  "id":376,
                  "properties":[
@@ -3860,24 +2896,6 @@
                          "name":"foguete",
                          "type":"bool",
                          "value":true
-                        }]
-                }, 
-                {
-                 "id":409,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":410,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
                         }]
                 }, 
                 {
@@ -4151,24 +3169,6 @@
                         }]
                 }, 
                 {
-                 "id":441,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":442,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":446,
                  "properties":[
                         {
@@ -4183,7 +3183,7 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4192,7 +3192,7 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4457,24 +3457,6 @@
                         }]
                 }, 
                 {
-                 "id":478,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":479,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
                  "id":483,
                  "properties":[
                         {
@@ -4489,7 +3471,7 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4498,7 +3480,7 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -4617,7 +3599,8 @@
                          "type":"bool",
                          "value":true
                         }]
-                }, 
+                },
+            
                 {
                  "id":499,
                  "properties":[
@@ -4755,24 +3738,6 @@
                 }, 
                 {
                  "id":514,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":515,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":516,
                  "properties":[
                         {
                          "name":"foguete",
@@ -4941,8 +3906,7 @@
                          "type":"bool",
                          "value":true
                         }]
-                },
-            
+                }, 
                 {
                  "id":539,
                  "properties":[
@@ -5053,24 +4017,6 @@
                 }, 
                 {
                  "id":551,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":552,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":553,
                  "properties":[
                         {
                          "name":"foguete",
@@ -5345,20 +4291,11 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
                  "id":588,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":589,
                  "properties":[
                         {
                          "name":"foguete",
@@ -5624,29 +4561,11 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":623,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":624,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
                          "value":false
                         }]
                 }, 
                 {
-                 "id":625,
+                 "id":623,
                  "properties":[
                         {
                          "name":"foguete",
@@ -5656,15 +4575,6 @@
                 }, 
                 {
                  "id":626,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":627,
                  "properties":[
                         {
                          "name":"foguete",
@@ -5912,56 +4822,11 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
-                 "id":659,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":660,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":661,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":662,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":663,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":false
-                        }]
-                }, 
-                {
-                 "id":664,
+                 "id":671,
                  "properties":[
                         {
                          "name":"foguete",
@@ -6078,12 +4943,31 @@
                         }]
                 }, 
                 {
-                 "id":710,
+                 "id":707,
                  "properties":[
                         {
                          "name":"foguete",
                          "type":"bool",
                          "value":true
+                        }]
+                },
+            
+                {
+                 "id":709,
+                 "properties":[
+                        {
+                         "name":"foguete",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":710,
+                 "properties":[
+                        {
+                         "name":"foguete",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -6101,43 +4985,7 @@
                         {
                          "name":"foguete",
                          "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":713,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":714,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":715,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":716,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -6160,24 +5008,6 @@
                 }, 
                 {
                  "id":719,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":720,
-                 "properties":[
-                        {
-                         "name":"foguete",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }, 
-                {
-                 "id":721,
                  "properties":[
                         {
                          "name":"foguete",
