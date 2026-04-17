@@ -9,8 +9,14 @@ class start extends Phaser.Scene {
   }
 
   create() {
-    this.add
-      .image(400, 225, "start")
+    const bg = this.add.image(0, 0, "start").setOrigin(0);
+
+    const scale = Math.min(
+      this.cameras.main.width / bg.width,
+      this.cameras.main.height / bg.height,
+    );
+
+    bg.setScale(scale)
       .setInteractive()
       .on("pointerdown", () => {
         this.scene.start("scene0");

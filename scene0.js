@@ -30,9 +30,21 @@ class scene0 extends Phaser.Scene {
       frameWidth: 128,
       frameHeight: 128,
     });
-    this.load.spritesheet("alien", "alien.png", {
-      frameWidth: 128,
-      frameHeight: 128,
+    this.load.spritesheet("alien", "alienandandobaixo.png", {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
+    this.load.spritesheet("alien", "alienandandocima.png", {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
+    this.load.spritesheet("alien", "alienandandodireita.png", {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
+    this.load.spritesheet("alien", "alienandandoesquerda.png", {
+      frameWidth: 64,
+      frameHeight: 64,
     });
     this.load.spritesheet("objects", "objects.png", {
       frameWidth: 32,
@@ -141,23 +153,53 @@ class scene0 extends Phaser.Scene {
       this.tilesetDecorative,
     ]);
 
-     this.layerPlanta3 = this.tilemap.createLayer("PLANTA 3", [
-       this.tilesetDecorative,
-     ]);
+    this.layerPlanta3 = this.tilemap.createLayer("PLANTA 3", [
+      this.tilesetDecorative,
+    ]);
 
     this.player = this.physics.add.sprite(
-      2489.018404687718,
-      2432,
+      2500.018404687718,
+      2430,
       "andandobaixo",
       0,
     );
     this.player.body.setSize(60, 95).setOffset(32, 32);
 
-     this.layerFoguete = this.tilemap.createLayer("FOGUETE", [
-       this.tilesetFoguete,
-     ]);
+    this.aliens = this.physics.add.group();
+    this.aliens.createMultiple({
+      key: "alien",
+      frameQuantity: 100,
+    });
+
+    this.aliens.children.iterate((alien) => {
+      alien.x = Math.random() * this.tilemap.widthInPixels;
+      if (Math.abs(alien.x - this.player.x) < 200) {
+        alien.x += 200;
+      }
+
+      alien.y = Math.random() * this.tilemap.heightInPixels;
+      if (Math.abs(alien.y - this.player.y) < 200) {
+        alien.y += 200;
+      }
+
+      alien.body.setSize(48, 48).setOffset(8, 16);
+    });
+    this.physics.add.overlap(
+      this.player,
+      this.aliens,
+      () => {
+        this.scene.stop();
+        this.scene.start("gameover");
+      },
+      null,
+      this,
+    );
+
+    this.layerFoguete = this.tilemap.createLayer("FOGUETE", [
+      this.tilesetFoguete,
+    ]);
     this.layerFoguete.setCollisionByProperty({ foguete: true });
-    
+
     this.layerIluminacao = this.tilemap.createLayer("ILUMINACAO", [
       this.tilesetWithFloor,
     ]);
@@ -284,6 +326,30 @@ class scene0 extends Phaser.Scene {
       if (this.direction.y > 0) this.player.anims.play("walk-down", true);
       else this.player.anims.play("walk-up", true);
     }
+
+    this.aliens.children.iterate((alien) => {
+      if (
+        Phaser.Math.Distance.Between(
+          this.player.x,
+          this.player.y,
+          alien.x,
+          alien.y,
+        ) < 200
+      ) {
+        if (this.player.x > alien.x) {
+          alien.setVelocityX(100);
+        } else if (this.player.x < alien.x) {
+          alien.setVelocityX(-100);
+        }
+        if (this.player.y > alien.y) {
+          alien.setVelocityY(100);
+        } else if (this.player.y < alien.y) {
+          alien.setVelocityY(-100);
+        }
+      } else {
+        alien.setVelocity(0, 0);
+      }
+    });
   }
 }
 
