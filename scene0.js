@@ -151,6 +151,7 @@ class scene0 extends Phaser.Scene {
       "andandobaixo",
       0,
     );
+    this.player.body.setSize(60, 95).setOffset(32, 32);
 
      this.layerFoguete = this.tilemap.createLayer("FOGUETE", [
        this.tilesetFoguete,
