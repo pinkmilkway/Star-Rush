@@ -30,19 +30,19 @@ class scene0 extends Phaser.Scene {
       frameWidth: 128,
       frameHeight: 128,
     });
-    this.load.spritesheet("alien", "alienandandobaixo.png", {
+    this.load.spritesheet("alien-down", "alienandandobaixo.png", {
       frameWidth: 64,
       frameHeight: 64,
     });
-    this.load.spritesheet("alien", "alienandandocima.png", {
+    this.load.spritesheet("alien-up", "alienandandocima.png", {
       frameWidth: 64,
       frameHeight: 64,
     });
-    this.load.spritesheet("alien", "alienandandodireita.png", {
+    this.load.spritesheet("alien-right", "alienandandodireita.png", {
       frameWidth: 64,
       frameHeight: 64,
     });
-    this.load.spritesheet("alien", "alienandandoesquerda.png", {
+    this.load.spritesheet("alien-left", "alienandandoesquerda.png", {
       frameWidth: 64,
       frameHeight: 64,
     });
@@ -167,8 +167,8 @@ class scene0 extends Phaser.Scene {
 
     this.aliens = this.physics.add.group();
     this.aliens.createMultiple({
-      key: "alien",
-      frameQuantity: 100,
+      key: "alien-down",
+      frameQuantity: 100
     });
 
     this.aliens.children.iterate((alien) => {
@@ -233,12 +233,42 @@ class scene0 extends Phaser.Scene {
     });
 
     this.anims.create({
-      key: "jumping",
-      frames: this.anims.generateFrameNumbers("personagem", {
-        start: 40,
-        end: 47,
+      key: "alien-walk-down",
+      frames: this.anims.generateFrameNumbers("alien-down", {
+        start: 0,
+        end: 7,
       }),
-      frameRate: 10,
+      frameRate: 8,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "alien-walk-up",
+      frames: this.anims.generateFrameNumbers("alien-up", {
+        start: 0,
+        end: 7,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "alien-walk-right",
+      frames: this.anims.generateFrameNumbers("alien-right", {
+        start: 0,
+        end: 7,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "alien-walk-left",
+      frames: this.anims.generateFrameNumbers("alien-left", {
+        start: 0,
+        end: 7,
+      }),
+      frameRate: 8,
       repeat: -1,
     });
 
@@ -265,6 +295,14 @@ class scene0 extends Phaser.Scene {
     this.physics.add.collider(this.player, this.layerPlanta2);
     this.physics.add.collider(this.player, this.layerPlanta3);
     this.physics.add.collider(this.player, this.layerMatocomolhos);
+
+    this.physics.add.collider(this.aliens, this.layerParede);
+    this.physics.add.collider(this.aliens, this.layerFoguete);
+    this.physics.add.collider(this.aliens, this.layerIluminacao);
+    this.physics.add.collider(this.aliens, this.layerPlanta1);
+    this.physics.add.collider(this.aliens, this.layerPlanta2);
+    this.physics.add.collider(this.aliens, this.layerPlanta3);
+    this.physics.add.collider(this.aliens, this.layerMatocomolhos);
 
     this.music = this.sound.add("music", { loop: true }).play();
     this.laser = this.sound.add("laser");
@@ -334,20 +372,32 @@ class scene0 extends Phaser.Scene {
           this.player.y,
           alien.x,
           alien.y,
-        ) < 200
+        ) < 400
       ) {
         if (this.player.x > alien.x) {
-          alien.setVelocityX(100);
+          alien.setVelocityX(50);
         } else if (this.player.x < alien.x) {
-          alien.setVelocityX(-100);
+          alien.setVelocityX(-50);
         }
         if (this.player.y > alien.y) {
-          alien.setVelocityY(100);
+          alien.setVelocityY(50);
         } else if (this.player.y < alien.y) {
-          alien.setVelocityY(-100);
+          alien.setVelocityY(-50);
         }
       } else {
         alien.setVelocity(0, 0);
+      }
+
+      if (alien.body.velocity.x > 0) {
+        alien.anims.play("alien-walk-right", true);
+      } else if (alien.body.velocity.x < 0) {
+        alien.anims.play("alien-walk-left", true);
+      } else if (alien.body.velocity.y > 0) {
+        alien.anims.play("alien-walk-down", true);
+      } else if (alien.body.velocity.y < 0) {
+        alien.anims.play("alien-walk-up", true);
+      } else {
+        alien.anims.stop();
       }
     });
   }
