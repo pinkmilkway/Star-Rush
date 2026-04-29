@@ -67,6 +67,10 @@ class scene0 extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
+    this.load.spritesheet("engrenagem", "engrenagem.png", {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
     this.load.audio("music", "music.mp3");
     this.load.audio("laser", "laser.mp3");
     this.load.audio("passos", "passos.mp3");
@@ -168,7 +172,7 @@ class scene0 extends Phaser.Scene {
     this.aliens = this.physics.add.group();
     this.aliens.createMultiple({
       key: "alien-down",
-      frameQuantity: 100
+      frameQuantity: 100,
     });
 
     this.aliens.children.iterate((alien) => {
@@ -190,6 +194,35 @@ class scene0 extends Phaser.Scene {
       () => {
         this.scene.stop();
         this.scene.start("gameover");
+      },
+      null,
+      this,
+    );
+
+    this.gears = this.physics.add.group();
+    this.gears.createMultiple({
+      key: "engrenagem",
+      frameQuantity: 1000,
+    });
+
+    this.gears.children.iterate((gear, index) => {
+      // Posicionar algumas próximas ao jogador para teste
+      if (index < 5) {
+        gear.x = this.player.x + index * 100 - 200;
+        gear.y = this.player.y + 100;
+      } else {
+        gear.x = Math.random() * this.tilemap.widthInPixels;
+        gear.y = Math.random() * this.tilemap.heightInPixels;
+      }
+      gear.body.setImmovable(true);
+      gear.anims.play("gear-spin", true);
+    });
+    this.physics.add.overlap(
+      this.player,
+      this.gears,
+      (player, gear) => {
+        gear.destroy();
+        // Adicionar lógica para coletar, como pontuação
       },
       null,
       this,
@@ -272,6 +305,16 @@ class scene0 extends Phaser.Scene {
       repeat: -1,
     });
 
+    this.anims.create({
+      key: "gear-spin",
+      frames: this.anims.generateFrameNumbers("engrenagem", {
+        start: 0,
+        end: 11,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    });
+
     this.physics.world.setBounds(
       0,
       0,
@@ -303,6 +346,14 @@ class scene0 extends Phaser.Scene {
     this.physics.add.collider(this.aliens, this.layerPlanta2);
     this.physics.add.collider(this.aliens, this.layerPlanta3);
     this.physics.add.collider(this.aliens, this.layerMatocomolhos);
+
+    this.physics.add.collider(this.gears, this.layerParede);
+    this.physics.add.collider(this.gears, this.layerFoguete);
+    this.physics.add.collider(this.gears, this.layerIluminacao);
+    this.physics.add.collider(this.gears, this.layerPlanta1);
+    this.physics.add.collider(this.gears, this.layerPlanta2);
+    this.physics.add.collider(this.gears, this.layerPlanta3);
+    this.physics.add.collider(this.gears, this.layerMatocomolhos);
 
     this.music = this.sound.add("music", { loop: true }).play();
     this.laser = this.sound.add("laser");
