@@ -172,7 +172,7 @@ class scene0 extends Phaser.Scene {
     this.aliens = this.physics.add.group();
     this.aliens.createMultiple({
       key: "alien-down",
-      frameQuantity: 100,
+      frameQuantity: 50,
     });
 
     this.aliens.children.iterate((alien) => {
@@ -395,11 +395,27 @@ class scene0 extends Phaser.Scene {
         this.direction.set(0, 0);
         this.player.setVelocity(0, 0);
         this.passos.stop();
-      }
+      } 
+
+      this.game.socket.on("scene0", (state). => {
+        if.(state.player) {
+              // 
     });
   }
 
   update() {
+    try {
+      this.game.socket.emit("scene0", this.game.room, {
+        player: {
+          x: this.player.x,
+          y: this.player.y,
+          key: this.player.anims.currentAnim.key,
+          frame: this.player.anims.currentFrame.index,
+        },
+      });
+    } catch (e) {
+      console.error("Error updating player:", e);
+    }
     if (
       this.player.body.velocity.x === 0 &&
       this.player.body.velocity.y === 0
