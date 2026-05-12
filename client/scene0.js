@@ -73,6 +73,7 @@ class scene0 extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
+    this.load.image("contadorBg", "contador.png");
     this.load.audio("music", "music.mp3");
     this.load.audio("laser", "laser.mp3");
     this.load.audio("passos", "passos.mp3");
@@ -82,6 +83,11 @@ class scene0 extends Phaser.Scene {
       "../rexvirtualjoystickplugin.min.js",
       true,
     );
+  }
+
+  init() {
+    // Resetar contador quando volta da gameover
+    this.gearCount = 0;
   }
 
   create() {
@@ -225,7 +231,15 @@ class scene0 extends Phaser.Scene {
       (player, gear) => {
         gear.destroy();
         this.gearCount++;
-        this.gearCounterText.setText(`Engrenagens: ${this.gearCount}`);
+        this.gearCounterValue.setText(`${this.gearCount}/100`);
+        console.log(`Engrenagem coletada! Total: ${this.gearCount}`);
+        console.log(`Engrenagem coletada! Total: ${this.gearCount}`);
+
+        // Verificar se ganhou o jogo
+        if (this.gearCount >= 100) {
+          this.scene.stop();
+          this.scene.start("victory"); // Criar cena de vitória depois
+        }
       },
       null,
       this,
@@ -334,17 +348,6 @@ class scene0 extends Phaser.Scene {
 
     this.player.setCollideWorldBounds(true);
 
-    // Criar contador de engrenagens no canto superior esquerdo
-    this.gearCounterText = this.add
-      .text(10, 10, `Engrenagens: ${this.gearCount}`, {
-        font: "24px Arial",
-        fill: "#ffffff",
-        backgroundColor: "#000000",
-        padding: { x: 10, y: 5 },
-      })
-      .setScrollFactor(0)
-      .setDepth(100);
-
     this.physics.add.collider(this.player, this.layerParede);
     this.physics.add.collider(this.player, this.layerFoguete);
     this.physics.add.collider(this.player, this.layerIluminacao);
@@ -445,6 +448,44 @@ class scene0 extends Phaser.Scene {
 
       remotePlayer.sprite.setTexture(textureKey, state.player.frame || 0);
     });
+
+    // Criar contador de engrenagens no canto superior esquerdo
+    const counterX = 12;
+    const counterY = 12;
+    const counterWidth = 226;
+    const counterHeight = 56;
+
+    this.counterBg = this.add
+      .image(counterX, counterY, "contadorBg")
+      .setOrigin(0)
+      .setDisplaySize(counterWidth, counterHeight)
+      .setScrollFactor(0)
+      .setDepth(995);
+
+    this.gearCounterValue = this.add
+      .text(
+        counterX + 82,
+        counterY + counterHeight / 2 + 2,
+        `${this.gearCount}/100`,
+        {
+          fontFamily: "Rye",
+          fontSize: "25px",
+          color: "#f9d750",
+          stroke: "#2b1e4f",
+          strokeThickness: 2,
+          shadow: {
+            offsetX: 0,
+            offsetY: 1,
+            color: "#000000",
+            blur: 3,
+            stroke: true,
+            fill: true,
+          },
+        },
+      )
+      .setOrigin(0, 0.5)
+      .setScrollFactor(0)
+      .setDepth(1000);
   }
 
   update() {

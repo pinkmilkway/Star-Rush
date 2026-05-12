@@ -2,6 +2,7 @@ import config from "./config.js";
 import start from "./start.js";
 import scene0 from "./scene0.js";
 import gameover from "./gameover.js";
+import victory from "./victory.js";
 
 class Game extends Phaser.Game {
   constructor() {
@@ -10,22 +11,23 @@ class Game extends Phaser.Game {
     this.scene.add("start", start);
     this.scene.add("scene0", scene0);
     this.scene.add("gameover", gameover);
+    this.scene.add("victory", victory);
     this.scene.start("start");
 
-     if (location.hostname.match(/localhost|127\.0\.0\.1/)) {
-       this.socket = io("http://localhost:3000");
-     } else if (location.hostname.match(/github\.dev/)) {
-       this.socket = io(location.hostname.replace("8080", "3000"));
-     } else {
-       this.socket = io();
-     }
+    if (location.hostname.match(/localhost|127\.0\.0\.1/)) {
+      this.socket = io("http://localhost:3000");
+    } else if (location.hostname.match(/github\.dev/)) {
+      this.socket = io(location.hostname.replace("8080", "3000"));
+    } else {
+      this.socket = io();
+    }
 
-     this.room = "0";
-     this.socket.on("connect", () => {
-       console.log("Socket ID:", this.socket.id);
+    this.room = "0";
+    this.socket.on("connect", () => {
+      console.log("Socket ID:", this.socket.id);
 
-       this.socket.emit("join-room", this.room);
-     });
+      this.socket.emit("join-room", this.room);
+    });
   }
 }
 
