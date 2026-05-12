@@ -6,6 +6,7 @@ class scene0 extends Phaser.Scene {
     this.speed = 200;
     this.direction = new Phaser.Math.Vector2(0, 0);
     this.remotePlayers = [];
+    this.gearCount = 0;
   }
 
   preload() {
@@ -223,7 +224,8 @@ class scene0 extends Phaser.Scene {
       this.gears,
       (player, gear) => {
         gear.destroy();
-        // Adicionar lógica para coletar, como pontuação
+        this.gearCount++;
+        this.gearCounterText.setText(`Engrenagens: ${this.gearCount}`);
       },
       null,
       this,
@@ -331,6 +333,17 @@ class scene0 extends Phaser.Scene {
     this.cameras.main.startFollow(this.player);
 
     this.player.setCollideWorldBounds(true);
+
+    // Criar contador de engrenagens no canto superior esquerdo
+    this.gearCounterText = this.add
+      .text(10, 10, `Engrenagens: ${this.gearCount}`, {
+        font: "24px Arial",
+        fill: "#ffffff",
+        backgroundColor: "#000000",
+        padding: { x: 10, y: 5 },
+      })
+      .setScrollFactor(0)
+      .setDepth(100);
 
     this.physics.add.collider(this.player, this.layerParede);
     this.physics.add.collider(this.player, this.layerFoguete);

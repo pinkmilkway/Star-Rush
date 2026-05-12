@@ -19,6 +19,10 @@ class gameover extends Phaser.Scene {
     );
 
     bg.setScale(scale)
+      .setInteractive()
+      .on("pointerdown", () => {
+        this.scene.start("start");
+      });
   }
 }
 
