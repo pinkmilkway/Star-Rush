@@ -28,7 +28,7 @@ class start extends Phaser.Scene {
       .setInteractive()
       .on("pointerdown", () => {
         this.scene.stop("start");
-        this.scene.start("preoloader");
+        this.scene.start("preloader");
       });
   }
 }

@@ -16,16 +16,19 @@ class player extends Phaser.Scene {
 
     this.anims.create({
       key: "android",
-      frames: this.anims.generateFrameNumbers("android", { start: 0, end: 5 }),
+      frames: this.anims.generateFrameNumbers("andandodireita", {
+        start: 0,
+        end: 5,
+      }),
       frameRate: 10,
       repeat: -1,
     });
 
     this.anims.create({
       key: "character",
-      frames: this.anims.generateFrameNumbers("character", {
-        start: 8,
-        end: 15,
+      frames: this.anims.generateFrameNumbers("andandodireita1", {
+        start: 0,
+        end: 8,
       }),
       frameRate: 10,
       repeat: -1,
