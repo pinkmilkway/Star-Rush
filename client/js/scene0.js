@@ -7,6 +7,9 @@ class scene0 extends Phaser.Scene {
     this.direction = new Phaser.Math.Vector2(0, 0);
     this.remotePlayers = [];
     this.gearCount = 0;
+    this.hasWeapon = false;
+    this.weaponTimer = 0;
+    this.weaponDuration = 30000; // 30 segundos em ms
   }
 
   init() {
@@ -248,6 +251,34 @@ class scene0 extends Phaser.Scene {
       repeat: -1,
     });
 
+    // Animações com arma
+    this.anims.create({
+      key: "astronauta-armabaixo",
+      frames: this.anims.generateFrameNumbers("astronautaarmabaixo", {
+        start: 0,
+        end: 0,
+      }),
+      frameRate: 1,
+    });
+
+    this.anims.create({
+      key: "astronauta-armaesquerda",
+      frames: this.anims.generateFrameNumbers("astronautaarmaesquerda", {
+        start: 0,
+        end: 0,
+      }),
+      frameRate: 1,
+    });
+
+    this.anims.create({
+      key: "astronauta-armadireita",
+      frames: this.anims.generateFrameNumbers("astronautadisparodireita", {
+        start: 0,
+        end: 0,
+      }),
+      frameRate: 1,
+    });
+
     this.player.body.setSize(60, 95).setOffset(32, 32);
 
     this.aliens = this.physics.add.group();
@@ -303,9 +334,64 @@ class scene0 extends Phaser.Scene {
       frameQuantity: 1000,
     });
 
+    this.weapons = this.physics.add.group();
+    this.weapons.createMultiple({
+      key: "arma",
+      frameQuantity: 500,
+    });
+
     const isOnWithFloor = (x, y) =>
       this.layerParede.hasTileAtWorldXY(x, y) ||
       this.layerIluminacao.hasTileAtWorldXY(x, y);
+
+    // Gerar posições bem afastadas para as armas
+    const weaponPositions = [];
+    const minDistance = 150; // Distância mínima entre armas
+    let positionIndex = 0;
+
+    while (positionIndex < 500) {
+      let x = Math.random() * this.tilemap.widthInPixels;
+      let y = Math.random() * this.tilemap.heightInPixels;
+      let attempts = 0;
+
+      // Evitar posições com colisão de mapa
+      while (isOnWithFloor(x, y) && attempts < 20) {
+        x = Math.random() * this.tilemap.widthInPixels;
+        y = Math.random() * this.tilemap.heightInPixels;
+        attempts += 1;
+      }
+
+      // Verificar se está longe de outras armas
+      let tooClose = false;
+      for (let pos of weaponPositions) {
+        const distance = Phaser.Math.Distance.Between(x, y, pos.x, pos.y);
+        if (distance < minDistance) {
+          tooClose = true;
+          break;
+        }
+      }
+
+      if (!tooClose) {
+        weaponPositions.push({ x, y });
+        positionIndex++;
+      }
+    }
+
+    this.weapons.children.iterate((weapon, index) => {
+      if (index < weaponPositions.length) {
+        weapon.x = weaponPositions[index].x;
+        weapon.y = weaponPositions[index].y;
+        weapon.body.reset(weapon.x, weapon.y);
+        weapon.body.setImmovable(true);
+        weapon.body.setSize(64, 64);
+        weapon.setActive(true);
+        weapon.setVisible(true);
+        weapon.setDisplaySize(64, 64);
+      } else {
+        weapon.setActive(false);
+        weapon.setVisible(false);
+      }
+    });
 
     this.gears.children.iterate((gear, index) => {
       let x;
@@ -345,6 +431,19 @@ class scene0 extends Phaser.Scene {
           this.scene.stop();
           this.scene.start("victory"); // Criar cena de vitória depois
         }
+      },
+      null,
+      this,
+    );
+
+    this.physics.add.overlap(
+      this.player,
+      this.weapons,
+      (player, weapon) => {
+        weapon.destroy();
+        this.hasWeapon = true;
+        this.weaponTimer = this.weaponDuration;
+        console.log("Arma coletada! Você tem 30 segundos!");
       },
       null,
       this,
@@ -439,6 +538,14 @@ class scene0 extends Phaser.Scene {
     this.physics.add.collider(this.gears, this.layerPlanta2);
     this.physics.add.collider(this.gears, this.layerPlanta3);
     this.physics.add.collider(this.gears, this.layerMatocomolhos);
+
+    this.physics.add.collider(this.weapons, this.layerParede);
+    this.physics.add.collider(this.weapons, this.layerFoguete);
+    this.physics.add.collider(this.weapons, this.layerIluminacao);
+    this.physics.add.collider(this.weapons, this.layerPlanta1);
+    this.physics.add.collider(this.weapons, this.layerPlanta2);
+    this.physics.add.collider(this.weapons, this.layerPlanta3);
+    this.physics.add.collider(this.weapons, this.layerMatocomolhos);
 
     this.music = this.sound.add("music", { loop: true }).play();
     this.laser = this.sound.add("laser");
@@ -572,6 +679,16 @@ class scene0 extends Phaser.Scene {
   }
 
   update() {
+    // Atualizar temporizador de arma
+    if (this.hasWeapon) {
+      this.weaponTimer -= 1000 / 60; // Reduzir pelo deltaTime aproximado
+      if (this.weaponTimer <= 0) {
+        this.hasWeapon = false;
+        this.weaponTimer = 0;
+        console.log("Arma expirou!");
+      }
+    }
+
     try {
       const frame = this.player.anims.currentFrame
         ? this.player.anims.currentFrame.index
@@ -601,17 +718,43 @@ class scene0 extends Phaser.Scene {
     ) {
       //this.player.anims.play(this.game.localPlayer + "-parado", true);
     } else if (Math.abs(this.direction.x) > Math.abs(this.direction.y)) {
-      if (this.direction.x > 0)
-        this.player.anims.play(this.game.localPlayer + "-andandodireita", true);
-      else
-        this.player.anims.play(
-          this.game.localPlayer + "-andandoesquerda",
-          true,
-        );
+      if (this.direction.x > 0) {
+        if (this.hasWeapon) {
+          this.player.setTexture("astronautadisparodireita");
+          this.player.anims.play("astronauta-armadireita", true);
+        } else {
+          this.player.anims.play(
+            this.game.localPlayer + "-andandodireita",
+            true,
+          );
+        }
+      } else {
+        if (this.hasWeapon) {
+          this.player.setTexture("astronautaarmaesquerda");
+          this.player.anims.play("astronauta-armaesquerda", true);
+        } else {
+          this.player.anims.play(
+            this.game.localPlayer + "-andandoesquerda",
+            true,
+          );
+        }
+      }
     } else {
-      if (this.direction.y > 0)
-        this.player.anims.play(this.game.localPlayer + "-andandobaixo", true);
-      else this.player.anims.play(this.game.localPlayer + "-andandocima", true);
+      if (this.direction.y > 0) {
+        if (this.hasWeapon) {
+          this.player.setTexture("astronautaarmabaixo");
+          this.player.anims.play("astronauta-armabaixo", true);
+        } else {
+          this.player.anims.play(this.game.localPlayer + "-andandobaixo", true);
+        }
+      } else {
+        if (this.hasWeapon) {
+          this.player.setTexture("astronautaarmabaixo");
+          this.player.anims.play("astronauta-armabaixo", true);
+        } else {
+          this.player.anims.play(this.game.localPlayer + "-andandocima", true);
+        }
+      }
     }
 
     this.aliens.children.iterate((alien) => {
