@@ -337,7 +337,7 @@ class scene0 extends Phaser.Scene {
     this.weapons = this.physics.add.group();
     this.weapons.createMultiple({
       key: "arma",
-      frameQuantity: 500,
+      frameQuantity: 100,
     });
 
     const isOnWithFloor = (x, y) =>
