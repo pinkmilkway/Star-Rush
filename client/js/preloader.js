@@ -139,25 +139,26 @@ class preloader extends Phaser.Scene {
       frameHeight: 32,
     });
     this.load.image("bomba", "bomba.png");
+    this.load.image("botaobomba", "botaobomba.png");
     this.load.spritesheet("astronautaarmabaixo", "astronautaarmabaixo.png", {
       frameWidth: 128,
       frameHeight: 128,
     });
     //this.load.spritesheet(
-     // "astronautaarmaesquerda",
-     // "astronautaarmaesquerda.png",
-      //{
-      //  frameWidth: 128,
-      //  frameHeight: 128,
-     // },
+    // "astronautaarmaesquerda",
+    // "astronautaarmaesquerda.png",
+    //{
+    //  frameWidth: 128,
+    //  frameHeight: 128,
+    // },
     //);
-   //this.load.spritesheet(
-     // "astronautadisparodireita",
-     // "astronautadisparodireita.png",
-     // {
-     //   frameWidth: 128,
-      //  frameHeight: 128,
-      //},
+    //this.load.spritesheet(
+    // "astronautadisparodireita",
+    // "astronautadisparodireita.png",
+    // {
+    //   frameWidth: 128,
+    //  frameHeight: 128,
+    //},
     //);
     this.load.image("contadorBg", "contador.png");
     this.load.audio("music", "music.mp3");
