@@ -35,7 +35,7 @@ class player extends Phaser.Scene {
     });
 
     this.android = this.add
-      .sprite(300, 225, "android")
+      .sprite(300, 225, "android-andandoesquerda", 0)
       .setScale(3)
       .setInteractive()
       .on("pointerdown", () => {
@@ -52,7 +52,7 @@ class player extends Phaser.Scene {
     this.android.play("android");
 
     this.character = this.add
-      .sprite(550, 225, "character")
+      .sprite(550, 225, "character-andandoesquerda", 0)
       .setScale(3)
       .setInteractive()
       .on("pointerdown", () => {

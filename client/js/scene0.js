@@ -149,134 +149,151 @@ class scene0 extends Phaser.Scene {
     this.player = this.physics.add.sprite(
       150,
       this.game.localPlayer === "character" ? 656 : 320,
-      this.game.localPlayer,
+      this.game.localPlayer === "character"
+        ? "character-andandobaixo"
+        : "android-andandobaixo",
       0,
+    );
+    this.player.anims.play(
+      this.game.localPlayer === "character"
+        ? "character-parado"
+        : "android-parado",
+      true,
     );
 
     this.anims.create({
       key: "android-andandocima",
-      frames: this.anims.generateFrameNumbers("android", {
-        start: 7,
-        end: 10,
+      frames: this.anims.generateFrameNumbers("android-andandocima", {
+        start: 0,
+        end: 3,
       }),
-      frameRate: 5,
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: "android-andandobaixo",
-      frames: this.anims.generateFrameNumbers("android", {
+      frames: this.anims.generateFrameNumbers("android-andandobaixo", {
         start: 0,
-        end: 5,
+        end: 3,
       }),
-      frameRate: 10,
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: "android-andandodireita",
-      frames: this.anims.generateFrameNumbers("android", {
-        start: 14,
-        end: 19,
+      frames: this.anims.generateFrameNumbers("android-andandodireita", {
+        start: 0,
+        end: 3,
       }),
-      frameRate: 10,
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: "android-andandoesquerda",
-      frames: this.anims.generateFrameNumbers("android", {
-        start: 21,
-        end: 26,
+      frames: this.anims.generateFrameNumbers("android-andandoesquerda", {
+        start: 0,
+        end: 3,
       }),
-      frameRate: 10,
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: "character-andandocima",
-      frames: this.anims.generateFrameNumbers("character", {
+      frames: this.anims.generateFrameNumbers("character-andandocima", {
         start: 0,
         end: 3,
       }),
-      frameRate: 5,
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: "character-andandoesquerda",
-      frames: this.anims.generateFrameNumbers("character", {
-        start: 8,
-        end: 15,
+      frames: this.anims.generateFrameNumbers("character-andandoesquerda", {
+        start: 0,
+        end: 3,
       }),
-      frameRate: 10,
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: "character-andandodireita",
-      frames: this.anims.generateFrameNumbers("character", {
-        start: 40,
-        end: 47,
+      frames: this.anims.generateFrameNumbers("character-andandodireita", {
+        start: 0,
+        end: 3,
       }),
-      frameRate: 10,
+      frameRate: 8,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "character-andandobaixo",
+      frames: this.anims.generateFrameNumbers("character-andandobaixo", {
+        start: 0,
+        end: 3,
+      }),
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: "character-parado",
-      frames: this.anims.generateFrameNumbers("character", {
+      frames: this.anims.generateFrameNumbers("character-andandobaixo", {
         start: 0,
         end: 0,
       }),
       frameRate: 1,
+      repeat: -1,
     });
 
     this.anims.create({
       key: "android-parado",
-      frames: this.anims.generateFrameNumbers("android", {
+      frames: this.anims.generateFrameNumbers("android-andandobaixo", {
         start: 0,
         end: 0,
       }),
       frameRate: 1,
-    });
-
-    this.anims.create({
-      key: "character-andandobaixo",
-      frames: this.anims.generateFrameNumbers("character", {
-        start: 24,
-        end: 31,
-      }),
-      frameRate: 10,
       repeat: -1,
     });
 
-    // Animações com bomba
+    this.player.anims.play(
+      this.game.localPlayer === "character"
+        ? "character-parado"
+        : "android-parado",
+      true,
+    );
+
+    // Animações com arma
     //this.anims.create({
-     // key: "astronauta-armabaixo",
-     // frames: this.anims.generateFrameNumbers("astronautaarmabaixo", {
-      //  start: 0,
-       // end: 0,
-      //}),
-      //frameRate: 1,
+    // key: "astronauta-armabaixo",
+    // frames: this.anims.generateFrameNumbers("astronautaarmabaixo", {
+    //  start: 0,
+    // end: 0,
+    //}),
+    //frameRate: 1,
     //});
 
-   // this.anims.create({
-     // key: "astronauta-armaesquerda",
-     // frames: this.anims.generateFrameNumbers("astronautaarmaesquerda", {
-       // start: 0,
-       // end: 0,
-      //}),
-     // frameRate: 1,
-   // });
+    // this.anims.create({
+    // key: "astronauta-armaesquerda",
+    // frames: this.anims.generateFrameNumbers("astronautaarmaesquerda", {
+    // start: 0,
+    // end: 0,
+    //}),
+    // frameRate: 1,
+    // });
 
     //this.anims.create({
-     // key: "astronauta-armadireita",
-     // frames: this.anims.generateFrameNumbers("astronautadisparodireita", {
-       // start: 0,
-       // end: 0,
-     // }),
-      //frameRate: 1,
+    // key: "astronauta-armadireita",
+    // frames: this.anims.generateFrameNumbers("astronautadisparodireita", {
+    // start: 0,
+    // end: 0,
+    // }),
+    //frameRate: 1,
     //});
 
     this.player.body.setSize(60, 95).setOffset(32, 32);
@@ -383,7 +400,7 @@ class scene0 extends Phaser.Scene {
         bomb.y = bombPositions[index].y;
         bomb.body.reset(bomb.x, bomb.y);
         bomb.body.setImmovable(true);
-        bomb.body.setSize(64, 64);
+        bomb.body.setSize(32, 32);
         bomb.setActive(true);
         bomb.setVisible(true);
         bomb.setDisplaySize(64, 64);
@@ -619,23 +636,28 @@ class scene0 extends Phaser.Scene {
 
       if (remotePlayer) {
         remotePlayer.sprite.setPosition(state.player.x, state.player.y);
-        remotePlayer.sprite.setTexture(
-          state.player.texture,
-          state.player.frame || 0,
-        );
+        if (state.player.texture) {
+          remotePlayer.sprite.setTexture(
+            state.player.texture,
+            state.player.frame || 0,
+          );
+        }
       } else {
+        const defaultTexture =
+          state.player.texture ||
+          (this.game.remotePlayer === "character"
+            ? "character-andandobaixo"
+            : "android-andandobaixo");
         remotePlayer = this.add.sprite(
           state.player.x,
           state.player.y,
-          this.game.remotePlayer === "character" ? "character" : "android",
-          0,
+          defaultTexture,
+          state.player.frame || 0,
         );
         this.remotePlayers.push({
           id: state.player.id,
           sprite: remotePlayer,
         });
-        remotePlayer.setPosition(state.player.x, state.player.y);
-        remotePlayer.setTexture(state.player.texture, state.player.frame || 0);
       }
     });
 
@@ -700,8 +722,7 @@ class scene0 extends Phaser.Scene {
           id: this.game.socket.id,
           x: this.player.x,
           y: this.player.y,
-          texture:
-            this.game.localPlayer === "character" ? "character" : "android",
+          texture: this.player.texture.key,
           animation: this.player.anims.currentAnim
             ? this.player.anims.currentAnim.key
             : null,
@@ -716,44 +737,21 @@ class scene0 extends Phaser.Scene {
       this.player.body.velocity.x === 0 &&
       this.player.body.velocity.y === 0
     ) {
-      //this.player.anims.play(this.game.localPlayer + "-parado", true);
+      this.player.anims.play(this.game.localPlayer + "-parado", true);
     } else if (Math.abs(this.direction.x) > Math.abs(this.direction.y)) {
       if (this.direction.x > 0) {
-        if (this.hasBomb) {
-          this.player.setTexture("astronautadisparodireita");
-         // this.player.anims.play("astronauta-armadireita", true);
-        //} else {
-          this.player.anims.play(
-            this.game.localPlayer + "-andandodireita",
-            true,
-          );
-        }
+        this.player.anims.play(this.game.localPlayer + "-andandodireita", true);
       } else {
-        if (this.hasBomb) {
-          this.player.setTexture("astronautaarmaesquerda");
-          //this.player.anims.play("astronauta-armaesquerda", true);
-        //} else {
-          this.player.anims.play(
-            this.game.localPlayer + "-andandoesquerda",
-            true,
-          );
-        }
+        this.player.anims.play(
+          this.game.localPlayer + "-andandoesquerda",
+          true,
+        );
       }
     } else {
       if (this.direction.y > 0) {
-        if (this.hasBomb) {
-          this.player.setTexture("astronautaarmabaixo");
-          //this.player.anims.play("astronauta-armabaixo", true);
-        } else {
-          this.player.anims.play(this.game.localPlayer + "-andandobaixo", true);
-        }
+        this.player.anims.play(this.game.localPlayer + "-andandobaixo", true);
       } else {
-        if (this.hasBomb) {
-          this.player.setTexture("astronautaarmabaixo");
-          //this.player.anims.play("astronauta-armabaixo", true);
-        } else {
-          this.player.anims.play(this.game.localPlayer + "-andandocima", true);
-        }
+        this.player.anims.play(this.game.localPlayer + "-andandocima", true);
       }
     }
 
