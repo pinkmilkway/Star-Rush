@@ -770,7 +770,7 @@ class scene0 extends Phaser.Scene {
         "paineltempo",
       )
       .setOrigin(1, 0)
-      .setScale(0.2)
+      .setScale(0.14)
       .setScrollFactor(0)
       .setDepth(995);
 
