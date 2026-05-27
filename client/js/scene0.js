@@ -8,6 +8,9 @@ class scene0 extends Phaser.Scene {
     this.remotePlayers = [];
     this.gearCount = 0;
     this.bombCount = 0;
+    this.timeLimit = 120000; // 2 minutos em ms
+    this.timeRemaining = this.timeLimit;
+    this.timeExpired = false;
     this.alienFrozen = false;
     this.alienFreezeDuration = 5000; // 5 segundos em ms
     this.alienFreezeTimer = 0;
@@ -30,6 +33,13 @@ class scene0 extends Phaser.Scene {
     if (this.bombCountText) {
       this.bombCountText.setText(`x${this.bombCount}`);
     }
+  }
+
+  formatTime(milliseconds) {
+    const totalSeconds = Math.max(0, Math.ceil(milliseconds / 1000));
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   }
 
   isUnderWater() {
@@ -752,6 +762,32 @@ class scene0 extends Phaser.Scene {
       .setScrollFactor(0)
       .setDepth(1000);
 
+    const timerTextMargin = 16;
+    this.timeRemainingText = this.add
+      .text(
+        this.cameras.main.width - timerTextMargin,
+        timerTextMargin + 20,
+        this.formatTime(this.timeRemaining),
+        {
+          fontFamily: "Rye",
+          fontSize: "24px",
+          color: "#ffffff",
+          stroke: "#000000",
+          strokeThickness: 3,
+          shadow: {
+            offsetX: 0,
+            offsetY: 1,
+            color: "#000000",
+            blur: 3,
+            stroke: true,
+            fill: true,
+          },
+        },
+      )
+      .setOrigin(1, 0)
+      .setScrollFactor(0)
+      .setDepth(1000);
+
     const bombButtonMargin = 16;
     this.bombButton = this.add
       .image(
@@ -835,6 +871,12 @@ class scene0 extends Phaser.Scene {
           gameSize.height - bombButtonMargin - 30,
         );
       }
+      if (this.timeRemainingText) {
+        this.timeRemainingText.setPosition(
+          gameSize.width - timerTextMargin,
+          timerTextMargin + 20,
+        );
+      }
       if (this.fogOverlay) {
         this.fogOverlay.setSize(gameSize.width, gameSize.height);
       }
@@ -851,6 +893,20 @@ class scene0 extends Phaser.Scene {
         this.alienFreezeTimer = 0;
         this.flashBombButton();
         console.log("Aliens voltaram a correr!");
+      }
+    }
+
+    if (this.timeRemaining > 0 && !this.timeExpired) {
+      this.timeRemaining -= delta;
+      if (this.timeRemaining <= 0) {
+        this.timeRemaining = 0;
+        this.timeExpired = true;
+        if (this.gearCount < 100) {
+          this.scene.start("gameover");
+        }
+      }
+      if (this.timeRemainingText) {
+        this.timeRemainingText.setText(this.formatTime(this.timeRemaining));
       }
     }
 
