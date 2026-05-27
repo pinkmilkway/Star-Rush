@@ -750,6 +750,20 @@ class scene0 extends Phaser.Scene {
 
     this.updateBombButtonState();
 
+    this.fogOverlay = this.add
+      .rectangle(
+        0,
+        0,
+        this.cameras.main.width,
+        this.cameras.main.height,
+        0xddeeff,
+        0.45,
+      )
+      .setOrigin(0)
+      .setScrollFactor(0)
+      .setDepth(999)
+      .setVisible(false);
+
     this.bombButton.on("pointerover", () => {
       if (this.hasBomb) {
         this.bombButton.setTint(0xffffaa);
@@ -782,6 +796,9 @@ class scene0 extends Phaser.Scene {
         gameSize.width - bombButtonMargin,
         gameSize.height - bombButtonMargin,
       );
+      if (this.fogOverlay) {
+        this.fogOverlay.setSize(gameSize.width, gameSize.height);
+      }
     });
   }
 
@@ -819,6 +836,10 @@ class scene0 extends Phaser.Scene {
         this.isWaterInverted = false;
         this.waterInvertTimer = 0;
       }
+    }
+
+    if (this.fogOverlay) {
+      this.fogOverlay.setVisible(this.isWaterInverted);
     }
 
     try {
