@@ -762,11 +762,22 @@ class scene0 extends Phaser.Scene {
       .setScrollFactor(0)
       .setDepth(1000);
 
-    const timerTextMargin = 16;
+    const timerPanelMargin = 16;
+    this.timePanel = this.add
+      .image(
+        this.cameras.main.width - timerPanelMargin,
+        timerPanelMargin,
+        "paineltempo",
+      )
+      .setOrigin(1, 0)
+      .setScale(0.2)
+      .setScrollFactor(0)
+      .setDepth(995);
+
     this.timeRemainingText = this.add
       .text(
-        this.cameras.main.width - timerTextMargin,
-        timerTextMargin + 20,
+        this.timePanel.x - this.timePanel.displayWidth / 2,
+        this.timePanel.y + this.timePanel.displayHeight / 2,
         this.formatTime(this.timeRemaining),
         {
           fontFamily: "Rye",
@@ -784,7 +795,7 @@ class scene0 extends Phaser.Scene {
           },
         },
       )
-      .setOrigin(1, 0)
+      .setOrigin(0.5, 0.5)
       .setScrollFactor(0)
       .setDepth(1000);
 
@@ -871,10 +882,16 @@ class scene0 extends Phaser.Scene {
           gameSize.height - bombButtonMargin - 30,
         );
       }
-      if (this.timeRemainingText) {
+      if (this.timePanel) {
+        this.timePanel.setPosition(
+          gameSize.width - timerPanelMargin,
+          timerPanelMargin,
+        );
+      }
+      if (this.timeRemainingText && this.timePanel) {
         this.timeRemainingText.setPosition(
-          gameSize.width - timerTextMargin,
-          timerTextMargin + 20,
+          this.timePanel.x - this.timePanel.displayWidth / 2,
+          this.timePanel.y + this.timePanel.displayHeight / 2,
         );
       }
       if (this.fogOverlay) {
