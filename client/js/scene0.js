@@ -13,6 +13,10 @@ class scene0 extends Phaser.Scene {
     this.alienFrozen = false;
     this.alienFreezeDuration = 5000; // 5 segundos em ms
     this.alienFreezeTimer = 0;
+    this.isWaterInverted = false;
+    this.waterInvertDuration = 5000; // 5 segundos em ms
+    this.waterInvertTimer = 0;
+    this.wasOnWater = false;
   }
 
   init() {
@@ -24,6 +28,18 @@ class scene0 extends Phaser.Scene {
     if (this.bombButton) {
       this.bombButton.setAlpha(this.hasBomb ? 1 : 0.4);
     }
+  }
+
+  isUnderWater() {
+    if (!this.layerGosma || !this.player) return false;
+    const x = this.player.body ? this.player.body.center.x : this.player.x;
+    const y = this.player.body ? this.player.body.center.y : this.player.y;
+    return this.layerGosma.hasTileAtWorldXY(x, y);
+  }
+
+  startWaterInvert() {
+    this.isWaterInverted = true;
+    this.waterInvertTimer = this.waterInvertDuration;
   }
 
   flashBombButton() {
@@ -595,10 +611,16 @@ class scene0 extends Phaser.Scene {
       const force = this.joystick.force;
 
       if (force > this.threshold) {
-        this.direction = new Phaser.Math.Vector2(
+        const rawDirection = new Phaser.Math.Vector2(
           Math.cos(angle),
           Math.sin(angle),
         ).normalize();
+
+        if (this.isWaterInverted) {
+          rawDirection.negate();
+        }
+
+        this.direction = rawDirection;
 
         this.player.setVelocity(
           this.direction.x * this.speed,
@@ -782,6 +804,20 @@ class scene0 extends Phaser.Scene {
         this.alienFreezeTimer = 0;
         this.flashBombButton();
         console.log("Aliens voltaram a correr!");
+      }
+    }
+
+    const onWater = this.isUnderWater();
+    if (onWater && !this.wasOnWater) {
+      this.startWaterInvert();
+    }
+    this.wasOnWater = onWater;
+
+    if (this.isWaterInverted) {
+      this.waterInvertTimer -= delta;
+      if (this.waterInvertTimer <= 0) {
+        this.isWaterInverted = false;
+        this.waterInvertTimer = 0;
       }
     }
 
