@@ -598,13 +598,29 @@ class scene0 extends Phaser.Scene {
     this.laser = this.sound.add("laser");
     this.passos = this.sound.add("passos");
 
+    const joystickBase = this.add
+      .circle(0, 0, 50, 0x10002b)
+      .setScrollFactor(0)
+      .setDepth(1100);
+    const joystickThumb = this.add
+      .circle(0, 0, 25, 0xe0aaff)
+      .setScrollFactor(0)
+      .setDepth(1101);
+
     this.joystick = this.plugins.get("rexvirtualjoystickplugin").add(this, {
       x: 100,
       y: 350,
       radius: 50,
-      base: this.add.circle(0, 0, 50, 0x10002b),
-      thumb: this.add.circle(0, 0, 25, 0xe0aaff),
+      base: joystickBase,
+      thumb: joystickThumb,
     });
+
+    if (this.joystick.base) {
+      this.joystick.base.setScrollFactor(0).setDepth(1100);
+    }
+    if (this.joystick.thumb) {
+      this.joystick.thumb.setScrollFactor(0).setDepth(1101);
+    }
 
     this.joystick.on("update", () => {
       const angle = Phaser.Math.DegToRad(this.joystick.angle);
