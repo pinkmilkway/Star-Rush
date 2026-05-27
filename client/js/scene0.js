@@ -7,9 +7,7 @@ class scene0 extends Phaser.Scene {
     this.direction = new Phaser.Math.Vector2(0, 0);
     this.remotePlayers = [];
     this.gearCount = 0;
-    this.hasBomb = false;
-    this.bombTimer = 0;
-    this.bombDuration = 30000; // 30 segundos em ms
+    this.bombCount = 0;
     this.alienFrozen = false;
     this.alienFreezeDuration = 5000; // 5 segundos em ms
     this.alienFreezeTimer = 0;
@@ -20,13 +18,17 @@ class scene0 extends Phaser.Scene {
   }
 
   init() {
-    // Resetar contador quando volta da gameover
+    // Resetar contadores quando volta da gameover
     this.gearCount = 0;
+    this.bombCount = 0;
   }
 
   updateBombButtonState() {
     if (this.bombButton) {
-      this.bombButton.setAlpha(this.hasBomb ? 1 : 0.4);
+      this.bombButton.setAlpha(this.bombCount > 0 ? 1 : 0.4);
+    }
+    if (this.bombCountText) {
+      this.bombCountText.setText(`x${this.bombCount}`);
     }
   }
 
@@ -487,10 +489,9 @@ class scene0 extends Phaser.Scene {
       this.bombs,
       (player, bomb) => {
         bomb.destroy();
-        this.hasBomb = true;
-        this.bombTimer = this.bombDuration;
+        this.bombCount += 1;
         this.updateBombButtonState();
-        console.log("Bomba coletada!");
+        console.log(`Bomba coletada! Inventário: ${this.bombCount}`);
       },
       null,
       this,
@@ -764,6 +765,23 @@ class scene0 extends Phaser.Scene {
       .setScale(0.102)
       .setInteractive();
 
+    this.bombCountText = this.add
+      .text(
+        this.cameras.main.width - bombButtonMargin - 10,
+        this.cameras.main.height - bombButtonMargin - 30,
+        `x${this.bombCount}`,
+        {
+          fontFamily: "Arial",
+          fontSize: "20px",
+          color: "#ffffff",
+          stroke: "#000000",
+          strokeThickness: 3,
+        },
+      )
+      .setOrigin(1, 0.5)
+      .setScrollFactor(0)
+      .setDepth(1000);
+
     this.updateBombButtonState();
 
     this.fogOverlay = this.add
@@ -781,7 +799,7 @@ class scene0 extends Phaser.Scene {
       .setVisible(false);
 
     this.bombButton.on("pointerover", () => {
-      if (this.hasBomb) {
+      if (this.bombCount > 0) {
         this.bombButton.setTint(0xffffaa);
       }
     });
@@ -791,15 +809,14 @@ class scene0 extends Phaser.Scene {
     });
 
     this.bombButton.on("pointerdown", () => {
-      if (this.hasBomb && !this.alienFrozen) {
+      if (this.bombCount > 0 && !this.alienFrozen) {
         this.cameras.main.flash();
         this.alienFrozen = true;
         this.alienFreezeTimer = this.alienFreezeDuration;
-        this.hasBomb = false;
-        this.bombTimer = 0;
+        this.bombCount -= 1;
         this.updateBombButtonState();
         this.flashBombButton();
-        console.log("Aliens congelados por 5 segundos!");
+        console.log(`Bomba usada! Restam ${this.bombCount} no inventário.`);
       } else if (this.alienFrozen) {
         console.log("Os aliens já estão congelados.");
       } else {
@@ -812,6 +829,12 @@ class scene0 extends Phaser.Scene {
         gameSize.width - bombButtonMargin,
         gameSize.height - bombButtonMargin,
       );
+      if (this.bombCountText) {
+        this.bombCountText.setPosition(
+          gameSize.width - bombButtonMargin - 10,
+          gameSize.height - bombButtonMargin - 30,
+        );
+      }
       if (this.fogOverlay) {
         this.fogOverlay.setSize(gameSize.width, gameSize.height);
       }
@@ -819,16 +842,7 @@ class scene0 extends Phaser.Scene {
   }
 
   update(time, delta) {
-    // Atualizar temporizador de bomba
-    if (this.hasBomb) {
-      this.bombTimer -= delta;
-      if (this.bombTimer <= 0) {
-        this.hasBomb = false;
-        this.bombTimer = 0;
-        this.updateBombButtonState();
-        console.log("Bomba expirou!");
-      }
-    }
+    // Bombas ficam no inventário até serem usadas
 
     if (this.alienFrozen) {
       this.alienFreezeTimer -= delta;
