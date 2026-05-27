@@ -11,7 +11,7 @@ class scene0 extends Phaser.Scene {
     this.bombTimer = 0;
     this.bombDuration = 30000; // 30 segundos em ms
     this.alienFrozen = false;
-    this.alienFreezeDuration = 10000; // 10 segundos em ms
+    this.alienFreezeDuration = 5000; // 5 segundos em ms
     this.alienFreezeTimer = 0;
   }
 
@@ -367,7 +367,7 @@ class scene0 extends Phaser.Scene {
     this.bombs = this.physics.add.group();
     this.bombs.createMultiple({
       key: "bomba",
-      frameQuantity: 100,
+      frameQuantity: 50,
     });
 
     const isOnWithFloor = (x, y) =>
@@ -724,7 +724,7 @@ class scene0 extends Phaser.Scene {
       .setScrollFactor(0)
       .setDepth(1000)
       .setScale(0.102)
-      .setInteractive()
+      .setInteractive();
 
     this.updateBombButtonState();
 
@@ -740,14 +740,14 @@ class scene0 extends Phaser.Scene {
 
     this.bombButton.on("pointerdown", () => {
       if (this.hasBomb && !this.alienFrozen) {
-        this.cameras.main.flash()
+        this.cameras.main.flash();
         this.alienFrozen = true;
         this.alienFreezeTimer = this.alienFreezeDuration;
         this.hasBomb = false;
         this.bombTimer = 0;
         this.updateBombButtonState();
         this.flashBombButton();
-        console.log("Aliens congelados por 10 segundos!");
+        console.log("Aliens congelados por 5 segundos!");
       } else if (this.alienFrozen) {
         console.log("Os aliens já estão congelados.");
       } else {
