@@ -8,7 +8,7 @@ class scene0 extends Phaser.Scene {
     this.remotePlayers = [];
     this.gearCount = 0;
     this.bombCount = 0;
-    this.timeLimit = 300000; // 5 minutos em ms
+    this.timeLimit = 150000; // 2.5 minutos em ms
     this.timeRemaining = this.timeLimit;
     this.timeExpired = false;
     this.alienFrozen = false;
@@ -342,7 +342,7 @@ class scene0 extends Phaser.Scene {
     this.aliens = this.physics.add.group();
     this.aliens.createMultiple({
       key: "alien-down",
-      frameQuantity: 0,
+      frameQuantity: 50,
     });
 
     this.aliens.children.iterate((alien) => {
