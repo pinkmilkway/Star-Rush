@@ -188,8 +188,8 @@ class scene0 extends Phaser.Scene {
     ]);
 
     this.player = this.physics.add.sprite(
-      150,
-      this.game.localPlayer === "character" ? 656 : 320,
+      this.game.localPlayer === "character" ? 2586.3168146808825 : 2465.4152863982727,
+      this.game.localPlayer === "character" ? 2434.1931745490915 : 2432,
       this.game.localPlayer === "character"
         ? "character-andandobaixo"
         : "android-andandobaixo",
