@@ -188,7 +188,9 @@ class scene0 extends Phaser.Scene {
     ]);
 
     this.player = this.physics.add.sprite(
-      this.game.localPlayer === "character" ? 2586.3168146808825 : 2465.4152863982727,
+      this.game.localPlayer === "character"
+        ? 2586.3168146808825
+        : 2465.4152863982727,
       this.game.localPlayer === "character" ? 2434.1931745490915 : 2432,
       this.game.localPlayer === "character"
         ? "character-andandobaixo"
@@ -345,15 +347,53 @@ class scene0 extends Phaser.Scene {
       frameQuantity: 50,
     });
 
-    this.aliens.children.iterate((alien) => {
-      alien.x = Math.random() * this.tilemap.widthInPixels;
-      if (Math.abs(alien.x - this.player.x) < 200) {
-        alien.x += 200;
-      }
+    const minDistanceFromPlayer = 400;
+    const minDistanceBetweenAliens = 250;
+    const alienPositions = [];
 
-      alien.y = Math.random() * this.tilemap.heightInPixels;
-      if (Math.abs(alien.y - this.player.y) < 200) {
-        alien.y += 200;
+    this.aliens.children.iterate((alien) => {
+      let validPosition = false;
+      let attempts = 0;
+      const maxAttempts = 50;
+
+      while (!validPosition && attempts < maxAttempts) {
+        alien.x = Math.random() * this.tilemap.widthInPixels;
+        alien.y = Math.random() * this.tilemap.heightInPixels;
+
+        // Verificar distância do jogador
+        const distToPlayer = Phaser.Math.Distance.Between(
+          alien.x,
+          alien.y,
+          this.player.x,
+          this.player.y,
+        );
+
+        if (distToPlayer < minDistanceFromPlayer) {
+          attempts++;
+          continue;
+        }
+
+        // Verificar distância dos outros aliens
+        let tooClose = false;
+        for (let pos of alienPositions) {
+          const distToOtherAlien = Phaser.Math.Distance.Between(
+            alien.x,
+            alien.y,
+            pos.x,
+            pos.y,
+          );
+          if (distToOtherAlien < minDistanceBetweenAliens) {
+            tooClose = true;
+            break;
+          }
+        }
+
+        if (!tooClose) {
+          validPosition = true;
+          alienPositions.push({ x: alien.x, y: alien.y });
+        }
+
+        attempts++;
       }
 
       alien.body.setSize(48, 48).setOffset(8, 16);
