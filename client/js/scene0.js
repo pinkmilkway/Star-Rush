@@ -8,7 +8,7 @@ class scene0 extends Phaser.Scene {
     this.remotePlayers = [];
     this.gearCount = 0;
     this.bombCount = 0;
-    this.timeLimit = 120000; // 2 minutos em ms
+    this.timeLimit = 300000; // 5 minutos em ms
     this.timeRemaining = this.timeLimit;
     this.timeExpired = false;
     this.alienFrozen = false;
@@ -342,7 +342,7 @@ class scene0 extends Phaser.Scene {
     this.aliens = this.physics.add.group();
     this.aliens.createMultiple({
       key: "alien-down",
-      frameQuantity: 50,
+      frameQuantity: 0,
     });
 
     this.aliens.children.iterate((alien) => {
@@ -400,7 +400,8 @@ class scene0 extends Phaser.Scene {
 
     const isOnWithFloor = (x, y) =>
       this.layerParede.hasTileAtWorldXY(x, y) ||
-      this.layerIluminacao.hasTileAtWorldXY(x, y);
+      this.layerIluminacao.hasTileAtWorldXY(x, y) ||
+      this.layerFoguete.hasTileAtWorldXY(x, y);
 
     // Gerar posições bem afastadas para as bombas
     const bombPositions = [];
