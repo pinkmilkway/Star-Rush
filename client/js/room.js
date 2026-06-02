@@ -32,8 +32,13 @@ class room extends Phaser.Scene {
         player,
       );
 
-      if (player === "android") this.game.localPlayer = "character";
-      else this.game.localPlayer = "android";
+      if (player === "android") {
+        this.game.localPlayer = "character";
+        this.game.remotePlayer = "android";
+      } else {
+        this.game.localPlayer = "android";
+        this.game.remotePlayer = "character";
+      }
 
       this.qrcodeContainer.remove();
 

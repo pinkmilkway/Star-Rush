@@ -8,6 +8,8 @@ class start extends Phaser.Scene {
     if (room) {
       this.game.room = room;
       this.game.socket.emit("join-room", this.game.room);
+    } else {
+      this.game.room = null;
     }
   }
 
