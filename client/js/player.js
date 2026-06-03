@@ -34,19 +34,6 @@ class player extends Phaser.Scene {
       repeat: -1,
     });
 
-    const startSceneOnSelection = (player) => {
-      console.log(
-        "Player selected in room:",
-        this.game.room,
-        "player:",
-        player,
-      );
-      this.game.localPlayer = player;
-      this.game.remotePlayer = player === "android" ? "character" : "android";
-      this.scene.stop("player");
-      this.scene.start("scene0");
-    };
-
     this.android = this.add
       .sprite(300, 225, "android-andandoesquerda", 0)
       .setScale(3)
@@ -55,7 +42,8 @@ class player extends Phaser.Scene {
         console.log("Android player selected");
         this.game.localPlayer = "android";
         this.game.remotePlayer = "character";
-        this.game.socket.once("player-selected", startSceneOnSelection);
+
+        this.startSceneOnSelection();
         this.game.socket.emit(
           "select-player",
           this.game.room,
@@ -72,7 +60,8 @@ class player extends Phaser.Scene {
         console.log("Character player selected");
         this.game.localPlayer = "character";
         this.game.remotePlayer = "android";
-        this.game.socket.once("player-selected", startSceneOnSelection);
+
+        this.startSceneOnSelection();
         this.game.socket.emit(
           "select-player",
           this.game.room,
@@ -80,6 +69,14 @@ class player extends Phaser.Scene {
         );
       });
     this.character.play("character");
+  }
+
+  startSceneOnSelection() {
+    console.log("Player selected in room:", this.game.room, "player:", player);
+    this.game.localPlayer = player;
+    this.game.remotePlayer = player === "android" ? "character" : "android";
+    this.scene.stop("player");
+    this.scene.start("scene0");
   }
 }
 
