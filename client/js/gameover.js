@@ -18,17 +18,11 @@ class gameover extends Phaser.Scene {
       this.cameras.main.height / bg.height,
     );
 
-    bg.setScale(scale)
+    // Aumenta o zoom da tela de game over em 20%
+    bg.setScale(scale * 1.2)
       .setInteractive()
       .on("pointerdown", () => {
         this.scene.start("start");
-        /*global Phaser*/
-/*eslint no-undef: "error"*/
-export default class finalTriste extends Phaser.Scene {
-  constructor() {
-    super("finalTriste");
-  }
-}
       });
   }
 }

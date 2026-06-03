@@ -17,6 +17,7 @@ class scene0 extends Phaser.Scene {
     this.isWaterInverted = false;
     this.waterInvertDuration = 5000; // 5 segundos em ms
     this.waterInvertTimer = 0;
+    this.invertTextTimer = null;
     this.wasOnWater = false;
   }
 
@@ -52,6 +53,23 @@ class scene0 extends Phaser.Scene {
   startWaterInvert() {
     this.isWaterInverted = true;
     this.waterInvertTimer = this.waterInvertDuration;
+    // iniciar texto piscante "EFEITO INVERSO"
+    try {
+      if (this.invertEffectText) {
+        this.invertEffectText.setVisible(true);
+        if (this.invertTextTimer) this.invertTextTimer.remove();
+        this.invertTextTimer = this.time.addEvent({
+          delay: 400,
+          loop: true,
+          callback: () => {
+            if (this.invertEffectText)
+              this.invertEffectText.setVisible(!this.invertEffectText.visible);
+          },
+        });
+      }
+    } catch (e) {
+      console.error("Erro ao iniciar timer do texto invertido:", e);
+    }
   }
 
   flashBombButton() {
@@ -402,6 +420,19 @@ class scene0 extends Phaser.Scene {
       this.player,
       this.aliens,
       () => {
+        const frame = this.player.anims.currentFrame
+          ? this.player.anims.currentFrame.index
+          : 0;
+        this.game.socket.emit("scene0", this.game.room, {
+          player: {
+            id: this.game.socket.id,
+            x: this.player.x,
+            y: this.player.y,
+            texture: this.player.texture.key,
+            frame,
+          },
+          gameOver: true,
+        });
         this.scene.stop();
         this.scene.start("gameover");
       },
@@ -746,6 +777,9 @@ class scene0 extends Phaser.Scene {
             state.player.frame || 0,
           );
         }
+        if (state.gameOver) {
+          remotePlayer.sprite.setTint(0xff0000);
+        }
       } else {
         const defaultTexture =
           state.player.texture ||
@@ -758,6 +792,9 @@ class scene0 extends Phaser.Scene {
           defaultTexture,
           state.player.frame || 0,
         );
+        if (state.gameOver) {
+          remotePlayer.setTint(0xff0000);
+        }
         this.remotePlayers.push({
           id: state.player.id,
           sprite: remotePlayer,
@@ -811,7 +848,7 @@ class scene0 extends Phaser.Scene {
         "paineltempo",
       )
       .setOrigin(1, 0)
-      .setScale(0.14)
+      .setScale(0.082)
       .setScrollFactor(0)
       .setDepth(995);
 
@@ -886,6 +923,56 @@ class scene0 extends Phaser.Scene {
       .setDepth(999)
       .setVisible(false);
 
+    // UI do timer de congelamento da bomba (imagem com texto, invisível por padrão)
+    this.freezeTimerBg = this.add
+      .image(
+        this.cameras.main.width - 100,
+        this.cameras.main.height - 120,
+        "paineltempo",
+      )
+      .setOrigin(0.5)
+      .setScale(0.072)
+      .setScrollFactor(0)
+      .setDepth(1001)
+      .setVisible(false);
+
+    // Posicionar inicialmente no centro da tela, um pouco acima
+    const centerX = this.cameras.main.centerX;
+    const centerY = this.cameras.main.centerY;
+    this.freezeTimerBg.setPosition(centerX, centerY - 120);
+
+    this.freezeTimerText = this.add
+      .text(this.freezeTimerBg.x, this.freezeTimerBg.y, "", {
+        fontFamily: "Rye",
+        fontSize: "24px",
+        color: "#f9d750",
+        stroke: "#2b1e4f",
+        strokeThickness: 3,
+      })
+      .setOrigin(0.5)
+      .setScrollFactor(0)
+      .setDepth(1002)
+      .setVisible(false);
+
+    // Texto piscante para efeito inverso (visível quando entra no nevoeiro)
+    this.invertEffectText = this.add
+      .text(
+        this.cameras.main.centerX,
+        this.cameras.main.centerY - 160,
+        "EFEITO INVERSO",
+        {
+          fontFamily: "Rye",
+          fontSize: "28px",
+          color: "#f9d750",
+          stroke: "#2b1e4f",
+          strokeThickness: 4,
+        },
+      )
+      .setOrigin(0.5)
+      .setScrollFactor(0)
+      .setDepth(1003)
+      .setVisible(false);
+
     this.bombButton.on("pointerover", () => {
       if (this.bombCount > 0) {
         this.bombButton.setTint(0xffffaa);
@@ -938,6 +1025,20 @@ class scene0 extends Phaser.Scene {
       if (this.fogOverlay) {
         this.fogOverlay.setSize(gameSize.width, gameSize.height);
       }
+      if (this.freezeTimerBg && this.freezeTimerText) {
+        const centerX = this.cameras.main.centerX;
+        const centerY = this.cameras.main.centerY;
+        this.freezeTimerBg.setPosition(centerX, centerY - 120);
+        this.freezeTimerText.setPosition(
+          this.freezeTimerBg.x,
+          this.freezeTimerBg.y,
+        );
+      }
+      if (this.invertEffectText) {
+        const centerX = this.cameras.main.centerX;
+        const centerY = this.cameras.main.centerY;
+        this.invertEffectText.setPosition(centerX, centerY - 160);
+      }
     });
   }
 
@@ -946,10 +1047,18 @@ class scene0 extends Phaser.Scene {
 
     if (this.alienFrozen) {
       this.alienFreezeTimer -= delta;
+      if (this.freezeTimerText) {
+        const secs = Math.max(0, Math.ceil(this.alienFreezeTimer / 1000));
+        this.freezeTimerText.setText(`Congelado: ${secs}s`);
+        this.freezeTimerText.setVisible(true);
+      }
       if (this.alienFreezeTimer <= 0) {
         this.alienFrozen = false;
         this.alienFreezeTimer = 0;
         this.flashBombButton();
+        if (this.freezeTimerText) {
+          this.freezeTimerText.setVisible(false);
+        }
         console.log("Aliens voltaram a correr!");
       }
     }
@@ -979,6 +1088,16 @@ class scene0 extends Phaser.Scene {
       if (this.waterInvertTimer <= 0) {
         this.isWaterInverted = false;
         this.waterInvertTimer = 0;
+        // parar texto piscante e esconder
+        try {
+          if (this.invertTextTimer) {
+            this.invertTextTimer.remove();
+            this.invertTextTimer = null;
+          }
+          if (this.invertEffectText) this.invertEffectText.setVisible(false);
+        } catch (e) {
+          console.error("Erro ao parar timer do texto invertido:", e);
+        }
       }
     }
 
