@@ -43,7 +43,7 @@ class player extends Phaser.Scene {
         this.game.localPlayer = "android";
         this.game.remotePlayer = "character";
 
-        this.startSceneOnSelection();
+        this.startSceneOnSelection(this.game.localPlayer);
         this.game.socket.emit(
           "select-player",
           this.game.room,
@@ -61,7 +61,7 @@ class player extends Phaser.Scene {
         this.game.localPlayer = "character";
         this.game.remotePlayer = "android";
 
-        this.startSceneOnSelection();
+        this.startSceneOnSelection(this.game.localPlayer);
         this.game.socket.emit(
           "select-player",
           this.game.room,
@@ -71,10 +71,22 @@ class player extends Phaser.Scene {
     this.character.play("character");
   }
 
-  startSceneOnSelection() {
-    console.log("Player selected in room:", this.game.room, "player:", player);
-    this.game.localPlayer = player;
-    this.game.remotePlayer = player === "android" ? "character" : "android";
+  startSceneOnSelection(player) {
+    const selectedPlayer = player || this.game.localPlayer;
+    if (!selectedPlayer) {
+      console.warn("No player selected, cannot start scene0.");
+      return;
+    }
+
+    console.log(
+      "Player selected in room:",
+      this.game.room,
+      "player:",
+      selectedPlayer,
+    );
+    this.game.localPlayer = selectedPlayer;
+    this.game.remotePlayer =
+      selectedPlayer === "android" ? "character" : "android";
     this.scene.stop("player");
     this.scene.start("scene0");
   }
